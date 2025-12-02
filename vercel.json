@@ -1,6 +1,4 @@
 {
-  "buildCommand": "npm run db:generate && npm run build",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "regions": ["iad1"]
+  "buildCommand": "prisma generate && next build",
+  "installCommand": "npm install"
 }
