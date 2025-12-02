@@ -29,11 +29,6 @@ export default function HeroSection() {
   }, []);
 
   const handleCTA = async () => {
-    if (!programId) {
-      alert('No se pudo cargar el programa. Intenta de nuevo.');
-      return;
-    }
-
     setIsLoading(true);
     try {
       // Usar endpoint público para checkout sin login
@@ -41,7 +36,7 @@ export default function HeroSection() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          programId,
+          programId: programId || 'cm4dg24t40001dw4d5gncxhib', // Fallback al ID del programa
           successUrl: `${window.location.origin}/checkout/success`,
           cancelUrl: `${window.location.origin}/`,
         }),
