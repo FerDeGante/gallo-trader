@@ -79,7 +79,7 @@ export default function ValuePropositionSection() {
         {benefits.map((benefit, index) => (
           <div 
             key={index} 
-            ref={el => cardRefs.current[index] = el}
+            ref={el => { cardRefs.current[index] = el; }}
             className={`${styles.card} ${visibleCards.has(index) ? styles.cardVisible : ''}`}
             style={{ 
               transitionDelay: `${(index % 3) * 100}ms`
