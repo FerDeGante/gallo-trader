@@ -29,11 +29,6 @@ export default function HeroSection() {
   }, []);
 
   const handleCTA = async () => {
-    if (!session) {
-      router.push('/login');
-      return;
-    }
-
     if (!programId) {
       alert('No se pudo cargar el programa. Intenta de nuevo.');
       return;
@@ -41,7 +36,8 @@ export default function HeroSection() {
 
     setIsLoading(true);
     try {
-      const response = await fetch('/api/v1/checkout/stripe', {
+      // Usar endpoint público para checkout sin login
+      const response = await fetch('/api/v1/checkout/public', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

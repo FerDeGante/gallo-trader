@@ -21,7 +21,7 @@ export default function TestimonialVideoSection() {
   }, []);
 
   return (
-    <section className={styles.section} ref={sectionRef}>
+    <section className={styles.section} ref={sectionRef} id="programa">
       <div className={styles.container}>
         <div className={`${styles.content} ${isInView ? styles.visible : ''}`}>
           <div className={styles.textContent}>

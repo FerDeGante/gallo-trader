@@ -10,8 +10,8 @@ export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
   const navLinks = [
     { href: '#programa', label: 'Programa' },
-    { href: '#mentoria', label: 'Mentoría' },
-    { href: '#precios', label: 'Precios' },
+    { href: '#mentoria', label: 'Cómo funciona' },
+    { href: '#precios', label: 'Precio' },
   ];
 
   useEffect(() => {
