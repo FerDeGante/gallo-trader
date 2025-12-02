@@ -88,7 +88,6 @@ export class LessonService {
       userId,
       lessonId: lesson.id,
       lessonTitle: lesson.title,
-      lessonType: lesson.type,
       lessonDuration: lesson.durationSeconds || undefined,
       programId: lesson.programId,
       moduleId: lesson.moduleId || undefined,

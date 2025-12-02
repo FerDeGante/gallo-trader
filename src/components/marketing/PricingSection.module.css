@@ -1,0 +1,212 @@
+/* Pricing - The Offer */
+.section {
+  padding: 8rem 2rem;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.backgroundGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(66, 133, 244, 0.15) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.pricingCard {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  padding: 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.pricingCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 32px;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cardContent {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.priceInfo {
+  text-align: left;
+}
+
+.priceLabel {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #4285f4;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.strikethrough {
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: line-through;
+  margin-bottom: 0.5rem;
+}
+
+.priceValue {
+  font-size: 5rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  margin-bottom: 1rem;
+  letter-spacing: -2px;
+}
+
+.pricePeriod {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+.priceDescription {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.125rem;
+}
+
+.checkIcon {
+  color: #34a853;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.ctaButton {
+  display: inline-block;
+  width: 100%;
+  padding: 1.25rem 2rem;
+  background: white;
+  color: black;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+  background: #f0f0f0;
+}
+
+.guarantee {
+  text-align: center;
+  margin-top: 3rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .cardContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .priceInfo {
+    text-align: center;
+  }
+
+  .featuresList {
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}

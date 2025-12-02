@@ -1,0 +1,321 @@
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 1.5rem 3.5rem;
+  background: radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.12), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(168, 85, 247, 0.12), transparent 35%),
+    #05060d;
+  color: #e5e7eb;
+}
+
+.backgroundGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.orbOne,
+.orbTwo {
+  position: absolute;
+  filter: blur(80px);
+  opacity: 0.3;
+}
+
+.orbOne {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.7), transparent 60%);
+  top: -60px;
+  left: -40px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.orbTwo {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.6), transparent 60%);
+  bottom: -40px;
+  right: -60px;
+  animation: float 9s ease-in-out infinite;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  z-index: 1;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 1.8rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.65rem;
+  color: #93c5fd;
+  margin-bottom: 0.4rem;
+}
+
+.title {
+  color: #f8fafc;
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  color: #bbf7d0;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  background: #34d399;
+  border-radius: 999px;
+  box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.18);
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.4rem;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #60a5fa, #2563eb);
+  color: #0b1021;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 48px rgba(37, 99, 235, 0.5);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about {
+  padding: 1.75rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.description {
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.statCard {
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.statLabel {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.statValue {
+  color: #f8fafc;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.socialIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  color: #e5e7eb;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.socialIcon:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.4rem;
+}
+
+.linksTitle {
+  color: #f8fafc;
+  font-weight: 800;
+  margin-bottom: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.linkList a {
+  color: #cbd5e1;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.linkList a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(120deg, #60a5fa, #a855f7);
+  transition: width 0.2s ease;
+}
+
+.linkList a:hover {
+  color: #f8fafc;
+}
+
+.linkList a:hover::after {
+  width: 30%;
+}
+
+.bottomBar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.risk {
+  color: #cbd5e1;
+  max-width: 820px;
+  line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+  .topRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 3.5rem 1.25rem 2.5rem;
+  }
+
+  .topRow {
+    padding: 1rem 1.1rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .primaryCta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .linksGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -10,7 +10,7 @@ export class PaymentService {
    * Crear sesión de checkout de Stripe
    */
   async createStripeCheckout(
-    userId: string,
+    userId: string | null,
     input: CreateCheckoutInput
   ) {
     // Verificar que el programa existe y está activo
@@ -20,16 +20,19 @@ export class PaymentService {
       throw new NotFoundError('Programa no encontrado o no disponible');
     }
 
-    // Crear el registro de pago en estado PENDING
-    const payment = await paymentRepository.create({
-      userId,
-      programId: program.id,
-      amount: program.priceUsd,
-      currency: 'USD',
-      provider: 'STRIPE',
-      providerPaymentId: 'pending', // Se actualizará con el session ID
-      status: 'PENDING',
-    });
+    // Crear el registro de pago en estado PENDING solo si hay userId
+    let payment = null;
+    if (userId) {
+      payment = await paymentRepository.create({
+        userId,
+        programId: program.id,
+        amount: program.priceUsd,
+        currency: 'USD',
+        provider: 'STRIPE',
+        providerPaymentId: 'pending', // Se actualizará con el session ID
+        status: 'PENDING',
+      });
+    }
 
     // Crear sesión de Stripe Checkout
     const session = await stripe.checkout.sessions.create({
@@ -37,47 +40,45 @@ export class PaymentService {
       payment_method_types: ['card'],
       line_items: [
         {
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: program.title,
-              description: program.subtitle || undefined,
-            },
-            unit_amount: program.priceUsd, // Stripe usa centavos
-          },
+          price: process.env.STRIPE_PRICE_ID, // Usar el Price ID configurado
           quantity: 1,
         },
       ],
       metadata: {
-        userId,
+        userId: userId || 'guest',
         programId: program.id,
-        paymentId: payment.id,
+        paymentId: payment?.id || 'pending',
       },
-      success_url: input.successUrl || `${process.env.NEXTAUTH_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+      customer_email: input.customerEmail, // Email del cliente para el checkout
+      success_url: `${input.successUrl || process.env.NEXTAUTH_URL + '/checkout/success'}?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: input.cancelUrl || `${process.env.NEXTAUTH_URL}/checkout/cancel`,
     });
 
-    // Actualizar el payment con el session ID
-    await paymentRepository.updateStatus(payment.id, 'PENDING', { sessionId: session.id });
+    // Actualizar el payment con el session ID si existe
+    if (payment) {
+      await paymentRepository.updateStatus(payment.id, 'PENDING', { sessionId: session.id });
+    }
 
     // Tracking: Checkout iniciado
-    trackEvent({
-      event: 'checkout_started',
-      userId,
-      programId: program.id,
-      programSlug: program.slug,
-      programTitle: program.title,
-      programPrice: program.priceUsd,
-      paymentId: payment.id,
-      paymentProvider: 'STRIPE',
-      paymentAmount: program.priceUsd,
-      paymentCurrency: 'USD',
-    });
+    if (userId) {
+      trackEvent({
+        event: 'checkout_started',
+        userId,
+        programId: program.id,
+        programSlug: program.slug,
+        programTitle: program.title,
+        programPrice: program.priceUsd,
+        paymentId: payment?.id,
+        paymentProvider: 'STRIPE',
+        paymentAmount: program.priceUsd,
+        paymentCurrency: 'USD',
+      });
+    }
 
     return {
       sessionId: session.id,
       url: session.url,
-      paymentId: payment.id,
+      paymentId: payment?.id,
     };
   }
 

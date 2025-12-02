@@ -39,7 +39,22 @@ export async function POST(request: NextRequest) {
         // Obtener metadata
         const { userId, programId, paymentId } = session.metadata || {};
 
-        if (!userId || !programId || !paymentId) {
+        if (!programId) {
+          console.error('programId faltante en checkout.session.completed');
+          break;
+        }
+
+        // Si el userId es 'guest', significa que el usuario compró sin cuenta
+        // El endpoint /api/v1/checkout/confirm se encargará de crear usuario y enrollment
+        if (userId === 'guest') {
+          console.log(`👤 Pago de invitado completado para programa ${programId}`);
+          console.log(`   Email: ${session.customer_email}`);
+          console.log(`   Session: ${session.id}`);
+          // No hacemos nada aquí, el flujo de confirm lo manejará
+          break;
+        }
+
+        if (!userId || !paymentId) {
           console.error('Metadata incompleta en checkout.session.completed');
           break;
         }

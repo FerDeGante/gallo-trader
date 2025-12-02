@@ -37,7 +37,6 @@ export class LessonProgressService {
       userId: data.userId,
       lessonId: data.lessonId,
       lessonTitle: lesson.title,
-      lessonType: lesson.type,
       programId: lesson.programId,
       moduleId: lesson.moduleId || undefined,
       metadata: {

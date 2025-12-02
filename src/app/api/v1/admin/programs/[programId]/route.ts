@@ -6,18 +6,18 @@ import { errorResponse, successResponse } from '@/server/utils/response';
 import { ValidationError } from '@/server/utils/errors';
 
 /**
- * GET /api/v1/admin/programs/[id]
+ * GET /api/v1/admin/programs/[programId]
  * Obtener detalle de un programa (incluye inactivos) - Solo admin
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ programId: string }> }
 ) {
   try {
     await requireAdmin();
     
-    const { id } = await params;
-    const program = await programService.getProgramById(id);
+    const { programId } = await params;
+    const program = await programService.getProgramById(programId);
     
     return successResponse(program);
   } catch (error) {
@@ -26,21 +26,21 @@ export async function GET(
 }
 
 /**
- * PATCH /api/v1/admin/programs/[id]
+ * PATCH /api/v1/admin/programs/[programId]
  * Actualizar un programa - Solo admin
  */
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ programId: string }> }
 ) {
   try {
     await requireAdmin();
     
-    const { id } = await params;
+    const { programId } = await params;
     const body = await request.json();
     const validatedData = updateProgramSchema.parse(body);
     
-    const program = await programService.updateProgram(id, validatedData);
+    const program = await programService.updateProgram(programId, validatedData);
     
     return successResponse(program);
   } catch (error) {
@@ -52,18 +52,18 @@ export async function PATCH(
 }
 
 /**
- * DELETE /api/v1/admin/programs/[id]
+ * DELETE /api/v1/admin/programs/[programId]
  * Desactivar un programa (soft delete) - Solo admin
  */
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ programId: string }> }
 ) {
   try {
     await requireAdmin();
     
-    const { id } = await params;
-    await programService.deactivateProgram(id);
+    const { programId } = await params;
+    await programService.deactivateProgram(programId);
     
     return successResponse({ message: 'Programa desactivado exitosamente' });
   } catch (error) {
