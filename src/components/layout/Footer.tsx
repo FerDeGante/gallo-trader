@@ -112,7 +112,7 @@ export default function Footer() {
               <ul className={styles.linkList}>
                 <li><a href="/terminos">Términos y Condiciones</a></li>
                 <li><a href="/privacidad">Política de Privacidad</a></li>
-                <li><a href="/aviso">Aviso de riesgo</a></li>
+                <li><a href="/aviso-riesgo">Aviso de riesgo</a></li>
               </ul>
             </div>
           </div>

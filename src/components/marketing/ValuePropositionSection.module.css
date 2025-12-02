@@ -54,9 +54,16 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   padding: 3rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .card::before {

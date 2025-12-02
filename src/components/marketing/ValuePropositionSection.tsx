@@ -1,7 +1,13 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import Section from '@/components/ui/Section';
 import styles from './ValuePropositionSection.module.css';
 
 export default function ValuePropositionSection() {
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
   const benefits = [
     {
       icon: '📊',
@@ -35,6 +41,28 @@ export default function ValuePropositionSection() {
     },
   ];
 
+  useEffect(() => {
+    const observers = cardRefs.current.map((card, index) => {
+      if (!card) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleCards(prev => new Set([...prev, index]));
+          }
+        },
+        { threshold: 0.2, rootMargin: '-50px' }
+      );
+
+      observer.observe(card);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach(observer => observer?.disconnect());
+    };
+  }, []);
+
   return (
     <Section background="dark" className={styles.section}>
       <div className={styles.header}>
@@ -49,26 +77,19 @@ export default function ValuePropositionSection() {
 
       <div className={styles.grid}>
         {benefits.map((benefit, index) => (
-          <div key={index} className={styles.card}>
+          <div 
+            key={index} 
+            ref={el => cardRefs.current[index] = el}
+            className={`${styles.card} ${visibleCards.has(index) ? styles.cardVisible : ''}`}
+            style={{ 
+              transitionDelay: `${(index % 3) * 100}ms`
+            }}
+          >
             <div className={styles.cardIcon}>{benefit.icon}</div>
             <h3 className={styles.cardTitle}>{benefit.title}</h3>
             <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
           </div>
         ))}
-      </div>
-
-      <div className="mt-16 text-center relative z-10">
-        <div className="inline-block bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 max-w-3xl mx-auto">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            📈 Objetivo del Programa
-          </h3>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            Que domines una estrategia rentable y replicable, que entiendas la gestión de riesgo 
-            a nivel profesional, y que puedas operar con confianza y disciplina para generar 
-            ingresos consistentes mes a mes. No garantizamos cifras específicas, pero te damos 
-            las herramientas que usan traders institucionales.
-          </p>
-        </div>
       </div>
     </Section>
   );
