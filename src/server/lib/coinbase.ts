@@ -1,22 +1,8 @@
 // Coinbase Commerce Client
-// Nota: El paquete oficial está deprecated, pero lo usamos como ejemplo
+// Nota: Funcionalidad deshabilitada temporalmente
 // En producción, considera usar la API REST directamente
 
-let Client: unknown = null;
-
-try {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const coinbase = require('coinbase-commerce-node');
-  Client = coinbase.Client;
-  
-  if (process.env.COINBASE_COMMERCE_API_KEY && Client && typeof (Client as Record<string, unknown>).init === 'function') {
-    (Client as Record<string, (key: string) => void>).init(process.env.COINBASE_COMMERCE_API_KEY);
-  }
-} catch (error) {
-  console.warn('Coinbase Commerce no está disponible:', error);
-}
-
-export const coinbaseClient = Client as Record<string, unknown> | null;
+export const coinbaseClient = null;
 
 // Tipos para Coinbase Commerce
 export type CoinbaseCharge = {

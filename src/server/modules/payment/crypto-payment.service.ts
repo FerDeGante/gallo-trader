@@ -34,16 +34,16 @@ export class CryptoPaymentService {
       status: 'PENDING',
     });
 
+    // Funcionalidad de Coinbase Commerce temporalmente deshabilitada
+    throw new Error('Coinbase Commerce no está disponible actualmente');
+    
+    /* Comentado para referencia futura - Requiere reinstalar coinbase-commerce-node
     try {
-      // Crear charge en Coinbase Commerce
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const Charge = require('coinbase-commerce-node').resources.Charge;
-      
       const chargeData = {
         name: program.title,
         description: program.subtitle || 'Acceso al programa premium',
         local_price: {
-          amount: (program.priceUsd / 100).toFixed(2), // Convertir de centavos a dólares
+          amount: (program.priceUsd / 100).toFixed(2),
           currency: 'USD',
         },
         pricing_type: 'fixed_price',
@@ -58,7 +58,6 @@ export class CryptoPaymentService {
 
       const charge = await Charge.create(chargeData);
 
-      // Actualizar payment con el charge ID
       await paymentRepository.updateStatus(payment.id, 'PENDING', {
         chargeId: charge.id,
         chargeCode: charge.code,
@@ -73,11 +72,11 @@ export class CryptoPaymentService {
     } catch (error) {
       console.error('Error creando charge de Coinbase:', error);
       
-      // Marcar pago como fallido
       await paymentRepository.updateStatus(payment.id, 'FAILED');
       
       throw new ValidationError('Error al procesar el pago con criptomonedas');
     }
+    */
   }
 }
 
