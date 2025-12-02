@@ -1,241 +1,201 @@
-# 🚀 Checklist de Deployment - Gallo Trader Backend
+# ✅ Checklist de Deployment - Gallo Trader
 
-## Pre-deployment
+## Pre-Deploy ✅ COMPLETADO
 
-### 1. Verificaciones locales
-
-- [x] ✅ Todas las migraciones ejecutadas (`npm run db:migrate`)
-- [x] ✅ Seed data funcionando (`npm run db:seed`)
-- [x] ✅ Sin errores de TypeScript (`npm run build`)
-- [x] ✅ Sin errores de ESLint críticos (`npm run lint`)
-- [ ] ⚠️ Tests pasando (opcional - no implementados aún)
-
-### 2. Variables de entorno
-
-Verificar que tienes preparadas estas variables para producción:
-
-#### Database (Requeridas)
-- [ ] `DATABASE_URL` - URL del pooler de Supabase (puerto 5432)
-- [ ] `DIRECT_URL` - URL directa para migrations (puerto 6543)
-
-#### Auth (Requeridas)
-- [ ] `NEXTAUTH_URL` - URL de producción (ej: https://gallotrader.com)
-- [ ] `NEXTAUTH_SECRET` - Generar nuevo con `openssl rand -base64 32`
-
-#### Stripe (Requeridas)
-- [ ] `STRIPE_SECRET_KEY` - Cambiar de test a live mode
-- [ ] `STRIPE_PUBLISHABLE_KEY` - Cambiar de test a live mode  
-- [ ] `STRIPE_WEBHOOK_SECRET` - Configurar webhook en Stripe Dashboard
-
-#### Coinbase Commerce (Opcional)
-- [ ] `COINBASE_COMMERCE_API_KEY`
-- [ ] `COINBASE_COMMERCE_WEBHOOK_SECRET`
-
-#### Rate Limiting (Opcional pero recomendado)
-- [ ] `UPSTASH_REDIS_REST_URL`
-- [ ] `UPSTASH_REDIS_REST_TOKEN`
-
-#### Analytics (Opcional)
-- [ ] `GA4_MEASUREMENT_ID`
-- [ ] `GA4_API_SECRET`
-- [ ] `META_PIXEL_ID`
-- [ ] `META_ACCESS_TOKEN`
-
-#### Observability (Opcional pero recomendado)
-- [ ] `SENTRY_DSN`
-- [ ] `NEXT_PUBLIC_SENTRY_DSN`
-- [ ] `LOG_LEVEL=info`
+- [x] Build sin errores (`npm run build`)
+- [x] Sin errores de TypeScript
+- [x] Sin errores de ESLint
+- [x] Código commiteado y pusheado a GitHub
+- [x] Archivo `.env.example` actualizado
+- [x] Documentación de deployment creada
+- [x] `vercel.json` configurado
 
 ---
 
-## Deployment en Vercel
+## Vercel Deployment 🚀
 
-### 1. Configurar proyecto
+### 1. Conectar Proyecto
+- [ ] Ve a [vercel.com](https://vercel.com)
+- [ ] Click en "Add New Project"
+- [ ] Importa el repositorio: `FerDeGante/gallo-trader`
+- [ ] **IMPORTANTE**: Configura **Root Directory** como `app`
 
-```bash
-# Instalar Vercel CLI
-npm i -g vercel
+### 2. Variables de Entorno
 
-# Login
-vercel login
+Copia estas variables desde tu `.env.local`:
 
-# Deploy (primera vez)
-vercel
-
-# Deploy a producción
-vercel --prod
+#### Database (Supabase)
+```
+DATABASE_URL=<tu_postgresql_url>
+DIRECT_URL=<tu_postgresql_direct_url>
 ```
 
-### 2. Configurar variables de entorno
-
-```bash
-# Database
-vercel env add DATABASE_URL
-vercel env add DIRECT_URL
-
-# Auth
-vercel env add NEXTAUTH_URL
-vercel env add NEXTAUTH_SECRET
-
-# Stripe
-vercel env add STRIPE_SECRET_KEY
-vercel env add STRIPE_PUBLISHABLE_KEY
-vercel env add STRIPE_WEBHOOK_SECRET
-
-# Sentry (opcional)
-vercel env add SENTRY_DSN
-vercel env add NEXT_PUBLIC_SENTRY_DSN
-
-# Etc...
+#### NextAuth
+```
+NEXTAUTH_URL=https://tu-dominio.vercel.app
+NEXTAUTH_SECRET=<genera_con: openssl rand -base64 32>
 ```
 
-### 3. Configurar webhooks
-
-#### Stripe Webhook:
-1. Ir a [Stripe Dashboard > Developers > Webhooks](https://dashboard.stripe.com/webhooks)
-2. Agregar endpoint: `https://tudominio.com/api/v1/webhooks/stripe`
-3. Seleccionar evento: `checkout.session.completed`
-4. Copiar el **Signing secret** a `STRIPE_WEBHOOK_SECRET`
-
-#### Coinbase Commerce Webhook (opcional):
-1. Ir a Coinbase Commerce Dashboard > Settings > Webhooks
-2. Agregar URL: `https://tudominio.com/api/v1/webhooks/crypto`
-3. Copiar el **Shared secret** a `COINBASE_COMMERCE_WEBHOOK_SECRET`
-
-### 4. Ejecutar migraciones en producción
-
-**Opción A: Desde local** (recomendado)
-```bash
-# Usar DIRECT_URL de producción temporalmente
-DATABASE_URL="postgresql://..." npx prisma migrate deploy
+#### Stripe
+```
+STRIPE_SECRET_KEY=sk_live_...
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=pk_live_...
+STRIPE_PRICE_ID=price_...
+STRIPE_WEBHOOK_SECRET=<configurar_después_del_deploy>
 ```
 
-**Opción B: En Vercel** (automático)
-- Las migraciones se ejecutan en build si tienes `prisma migrate deploy` en scripts
-
-### 5. Seed inicial (solo primera vez)
-
-```bash
-# Conectarse a BD de producción y ejecutar seed
-DATABASE_URL="postgresql://..." npm run db:seed
+#### Upstash Redis
 ```
+UPSTASH_REDIS_REST_URL=https://...
+UPSTASH_REDIS_REST_TOKEN=...
+```
+
+#### Sentry (Opcional)
+```
+SENTRY_AUTH_TOKEN=...
+NEXT_PUBLIC_SENTRY_DSN=https://...@sentry.io/...
+```
+
+#### App Config
+```
+NEXT_PUBLIC_APP_URL=https://tu-dominio.vercel.app
+NODE_ENV=production
+```
+
+### 3. Configurar Stripe Webhook
+
+Después del primer deploy:
+
+1. Ve a [Stripe Dashboard > Webhooks](https://dashboard.stripe.com/webhooks)
+2. Click "Add endpoint"
+3. Endpoint URL: `https://tu-dominio.vercel.app/api/v1/webhooks/stripe`
+4. Selecciona eventos:
+   - ✅ `checkout.session.completed`
+   - ✅ `payment_intent.succeeded`
+   - ✅ `payment_intent.payment_failed`
+5. Copia el **Signing secret** (empieza con `whsec_`)
+6. Agrégalo como variable de entorno `STRIPE_WEBHOOK_SECRET` en Vercel
+7. Re-deploy desde Vercel dashboard
+
+### 4. Verificar Deploy
+
+- [ ] Build exitoso en Vercel
+- [ ] Sitio cargando correctamente
+- [ ] Landing page visible
+- [ ] Login funcional
+- [ ] Checkout funcional
+- [ ] Webhook de Stripe configurado
+- [ ] Pago de prueba exitoso
 
 ---
 
-## Post-deployment
+## Railway Deployment (Alternativa/Backup) 🚂
 
-### 1. Verificar endpoints
+### 1. Conectar Proyecto
+- [ ] Ve a [railway.app](https://railway.app)
+- [ ] Click "New Project" > "Deploy from GitHub repo"
+- [ ] Selecciona: `FerDeGante/gallo-trader`
+- [ ] **Root Directory**: `app`
 
-- [ ] `GET /api/v1/programs` - Debe retornar programa seeded
-- [ ] `POST /api/v1/checkout/stripe` - Debe crear checkout session
-- [ ] `POST /api/v1/webhooks/stripe` - Configurado en Stripe
-- [ ] `GET /api/v1/me` - Requiere auth
+### 2. Configurar Variables de Entorno
 
-### 2. Pruebas de integración
+Railway puede usar las mismas variables que Vercel (ver arriba).
 
-- [ ] Completar un checkout de prueba en Stripe (test mode primero)
-- [ ] Verificar que se activa enrollment automáticamente
-- [ ] Verificar que usuario puede acceder a lecciones
-- [ ] Verificar que progreso se guarda correctamente
+**Importante**: Railway puede proveer PostgreSQL automáticamente:
+- [ ] Click "Add Service" > "Database" > "PostgreSQL"
+- [ ] Railway generará `DATABASE_URL` automáticamente
+- [ ] Copia la URL y úsala también como `DIRECT_URL`
 
-### 3. Monitoreo
+### 3. Build Settings
 
-- [ ] Verificar logs en Vercel Dashboard
-- [ ] Verificar errores en Sentry (si configurado)
-- [ ] Verificar eventos en GA4 (si configurado)
-- [ ] Configurar alertas en Sentry para errores críticos
+Railway detecta Next.js automáticamente, pero verifica:
 
-### 4. Seguridad
+- **Build Command**: `npm run db:generate && npm run build`
+- **Start Command**: `npm start`
 
-- [ ] ✅ Rate limiting activo (verificar en logs)
-- [ ] ✅ Todos los endpoints admin protegidos con `requireAdmin()`
-- [ ] ✅ Tokens JWT con expiración corta (5 min)
-- [ ] ✅ Passwords hasheados con bcryptjs
-- [ ] ⚠️ HTTPS habilitado (automático en Vercel)
-- [ ] ⚠️ CORS configurado correctamente (si es necesario)
+### 4. Migraciones
 
----
-
-## Troubleshooting
-
-### Error: "PrismaClient is unable to run in this browser environment"
-**Solución**: Verificar que Prisma client solo se importa en server components/API routes, no en client components.
-
-### Error: "Invalid signature" en webhook
-**Solución**: Verificar que `STRIPE_WEBHOOK_SECRET` coincide con el secret de Stripe Dashboard.
-
-### Error: Rate limit no funciona
-**Solución**: 
-- Verificar que `UPSTASH_REDIS_REST_URL` está configurado
-- Si no usas Redis, el fallback in-memory funciona pero no es distribuido
-
-### Logs no aparecen en Vercel
-**Solución**: Verificar que `LOG_LEVEL` está en `info` o `debug`.
-
-### Sentry no captura errores
-**Solución**: 
-- Verificar que `SENTRY_DSN` está configurado
-- Verificar que archivos `sentry.*.config.ts` están en root del proyecto
-
----
-
-## Rollback
-
-Si algo falla en producción:
+Después del primer deploy, ejecuta:
 
 ```bash
-# Revertir a versión anterior
-vercel rollback
-
-# O hacer deploy de commit específico
-git checkout <commit-hash>
-vercel --prod
+railway run npm run db:migrate
+railway run npm run db:seed  # Opcional - datos de prueba
 ```
 
 ---
 
-## Mantenimiento
+## Post-Deploy ✅
 
-### Backups de base de datos
+### Verificaciones Finales
 
-Configurar backups automáticos en Supabase:
-- Supabase > Settings > Database > Backups
-- Configurar Point-in-Time Recovery (PITR)
+- [ ] Sitio en producción funcionando
+- [ ] SSL/HTTPS activo
+- [ ] Landing page carga correctamente
+- [ ] Login funcional
+- [ ] Checkout completo funciona
+- [ ] Webhooks de Stripe configurados
+- [ ] Pagos de prueba exitosos
+- [ ] Redirección post-pago funciona
+- [ ] Auto-creación de usuario funciona
+- [ ] Auto-login funciona
+- [ ] Acceso al aula después de pago
 
-### Actualizar dependencias
+### Monitoreo
+
+- [ ] Sentry configurado para errores
+- [ ] Logs de Vercel/Railway revisados
+- [ ] Stripe Dashboard mostrando eventos
+
+### Seguridad
+
+- [ ] Claves de producción (no test) en prod
+- [ ] `NEXTAUTH_SECRET` único y seguro
+- [ ] Variables de entorno nunca en código
+- [ ] `.env.local` en `.gitignore`
+
+---
+
+## Contactos de Soporte
+
+- **Vercel**: https://vercel.com/support
+- **Railway**: https://railway.app/help
+- **Stripe**: https://support.stripe.com
+- **Supabase**: https://supabase.com/support
+
+---
+
+## Comandos Útiles
 
 ```bash
-# Revisar actualizaciones
-npm outdated
+# Verificar build local
+npm run build
 
-# Actualizar (con precaución)
-npm update
+# Generar Prisma client
+npm run db:generate
 
-# Actualizar Prisma
-npm install prisma@latest @prisma/client@latest
-npx prisma migrate deploy
-npx prisma generate
+# Ejecutar migraciones
+npm run db:migrate
+
+# Seed de datos
+npm run db:seed
+
+# Pull variables de Vercel
+vercel env pull .env.local
+
+# Ver logs de Railway
+railway logs
 ```
 
-### Monitoreo de costos
-
-- [ ] Stripe: Revisar dashboard de transacciones
-- [ ] Supabase: Revisar usage dashboard
-- [ ] Vercel: Revisar billing
-- [ ] Upstash: Revisar Redis usage
-- [ ] Sentry: Revisar quota usage
-
 ---
 
-## Contactos de soporte
+## 🎉 Deploy Exitoso
 
-- **Stripe Support**: https://support.stripe.com
-- **Supabase Support**: https://supabase.com/support
-- **Vercel Support**: https://vercel.com/support
-- **Sentry Support**: https://sentry.io/support
+Si completaste todos los checkboxes, tu aplicación está desplegada y lista para recibir usuarios!
 
----
+**URL de Producción**: `https://_________.vercel.app`
 
-✅ **Checklist completado**: ___ / ___ items
-📅 **Fecha de deployment**: __________
-🚀 **URL de producción**: __________
+**Próximos pasos**:
+1. Configura tu dominio personalizado
+2. Agrega analytics (Google Analytics, Meta Pixel)
+3. Configura emails transaccionales
+4. Monitorea errores con Sentry
