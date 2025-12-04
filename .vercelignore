@@ -43,12 +43,38 @@ yarn-error.log*
 *.swo
 *~
 
-# Documentation (opcional, comentar si quieres incluirla)
-*.md
-!README.md
+# Documentation - Only deployment guides (keep other MD files)
+BOOTCAMP_LANDING.md
+CHECKLIST_VERCEL.md
+CHECKOUT_TESTING.md
+DEPLOY_VERCEL.md
+DEPLOYMENT_CHECKLIST.md
+DEPLOYMENT.md
+OBSERVABILITY.md
+PROYECTO_COMPLETADO.md
+RAILWAY_DEPLOYMENT_CHECKLIST.md
+RAILWAY_DEPLOYMENT_GUIDE.md
+RAILWAY_DEPLOYMENT.md
+VERCEL_DEPLOYMENT_FINAL.md
+VERCEL_DEPLOYMENT.md
+VERCEL_DEPLOY.md
+ROUTE_STRUCTURE.md
 
 # Test files
 *.test.ts
 *.test.tsx
 *.spec.ts
 *.spec.tsx
+
+# Railway specific
+railway.toml
+railway.json
+deploy-railway.sh
+setup-railway-env.sh
+Dockerfile
+.dockerignore
+
+# Scripts
+deploy-check.sh
+deploy-to-vercel.sh
+vercel-deploy-check.sh
