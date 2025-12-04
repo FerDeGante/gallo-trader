@@ -39,8 +39,8 @@
 }
 
 .blob1 {
-  width: 800px;
-  height: 800px;
+  width: 400px;
+  height: 400px;
   background: radial-gradient(circle, #4285f4 0%, transparent 70%);
   top: -20%;
   left: -10%;

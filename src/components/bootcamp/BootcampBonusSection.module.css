@@ -12,10 +12,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(251, 188, 4, 0.1) 0%, transparent 70%);
-  filter: blur(100px);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(251, 188, 4, 0.08) 0%, transparent 70%);
+  filter: blur(80px);
   pointer-events: none;
 }
 
