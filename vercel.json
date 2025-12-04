@@ -11,17 +11,6 @@
     }
   },
   "crons": [],
-  "env": {
-    "DATABASE_URL": "@database_url",
-    "DIRECT_URL": "@direct_url",
-    "NEXTAUTH_SECRET": "@nextauth_secret",
-    "NEXTAUTH_URL": "@nextauth_url",
-    "STRIPE_SECRET_KEY": "@stripe_secret_key",
-    "STRIPE_WEBHOOK_SECRET": "@stripe_webhook_secret",
-    "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY": "@stripe_publishable_key",
-    "NEXT_PUBLIC_DISCORD_INVITE_URL": "@discord_invite_url",
-    "NEXT_PUBLIC_WHATSAPP_NUMBER": "@whatsapp_number"
-  },
   "headers": [
     {
       "source": "/api/(.*)",
