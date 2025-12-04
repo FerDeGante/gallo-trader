@@ -3,13 +3,11 @@ import BootcampValueSection from '@/components/bootcamp/BootcampValueSection';
 import BootcampContentSection from '@/components/bootcamp/BootcampContentSection';
 import BootcampBonusSection from '@/components/bootcamp/BootcampBonusSection';
 import BootcampPricingSection from '@/components/bootcamp/BootcampPricingSection';
-import BootcampVideoSection from '@/components/bootcamp/BootcampVideoSection';
 
-export default function Home() {
+export default function BootcampPage() {
   return (
     <>
       <BootcampHeroSection />
-      <BootcampVideoSection />
       <BootcampValueSection />
       <BootcampContentSection />
       <BootcampBonusSection />

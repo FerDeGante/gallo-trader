@@ -1,20 +1,34 @@
 #!/bin/bash
 
-echo "🚀 Preparando deploy para Vercel y Railway..."
+echo "🚀 Gallo Trader Bootcamp - Deploy Check"
+echo "========================================"
+
+# Verificar que el logo existe
+echo "📸 Verificando assets..."
+if [ -f "public/gallo_simbolo.png" ]; then
+    echo "✅ Logo encontrado"
+else
+    echo "❌ Logo no encontrado: public/gallo_simbolo.png"
+    exit 1
+fi
 
 # Verificar que no hay errores
+echo ""
 echo "📝 Verificando errores de TypeScript..."
 npm run lint
 
 # Generar cliente de Prisma
+echo ""
 echo "🔧 Generando cliente de Prisma..."
 npm run db:generate
 
 # Build
+echo ""
 echo "🏗️  Compilando aplicación..."
 npm run build
 
 if [ $? -eq 0 ]; then
+    echo ""
     echo "✅ Build exitoso!"
     echo ""
     echo "📋 Próximos pasos para Vercel:"

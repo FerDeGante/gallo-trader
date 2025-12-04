@@ -1,0 +1,313 @@
+.section {
+  position: relative;
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+  color: #ffffff;
+}
+
+.backgroundGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle, rgba(66, 133, 244, 0.15) 0%, transparent 70%);
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: rgba(66, 133, 244, 0.15);
+  border: 1px solid rgba(66, 133, 244, 0.3);
+  border-radius: 100px;
+  color: #93c5fd;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #94a3b8;
+}
+
+.pricingCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px solid rgba(66, 133, 244, 0.3);
+  border-radius: 32px;
+  padding: 3rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(66, 133, 244, 0.2);
+  margin-bottom: 4rem;
+}
+
+.cardHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.planName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.planDuration {
+  font-size: 1rem;
+  color: #94a3b8;
+}
+
+.priceSection {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(66, 133, 244, 0.1) 0%, rgba(52, 168, 83, 0.05) 100%);
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+
+.priceValue {
+  font-size: clamp(3.5rem, 6vw, 5rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.currency {
+  font-size: 0.5em;
+  color: #94a3b8;
+}
+
+.period {
+  font-size: 0.35em;
+  color: #64748b;
+  margin-left: 0.5rem;
+}
+
+.priceNote {
+  font-size: 1rem;
+  color: #34a853;
+  font-weight: 600;
+}
+
+.features {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 2rem 0;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.125rem;
+  color: #e2e8f0;
+}
+
+.checkIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(52, 168, 83, 0.2);
+  border: 2px solid rgba(52, 168, 83, 0.4);
+  border-radius: 50%;
+  color: #86efac;
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.ctaButton {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 2rem 3rem;
+  background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%);
+  box-shadow: 0 12px 48px rgba(66, 133, 244, 0.6), 0 0 0 4px rgba(66, 133, 244, 0.15);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+.ctaButton:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 56px rgba(66, 133, 244, 0.8), 0 0 0 5px rgba(66, 133, 244, 0.2);
+  background: linear-gradient(135deg, #5a9aff 0%, #4285f4 100%);
+}
+
+.ctaButton:active {
+  transform: translateY(-2px) scale(1.01);
+}
+
+.ctaSubtext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: #cbd5e1;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.ctaSubtext .checkmark {
+  color: #34a853;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.guarantee {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.guaranteeIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.guaranteeText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.guaranteeText strong {
+  font-size: 1.125rem;
+  color: #ffffff;
+}
+
+.guaranteeText span {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.urgency {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(251, 188, 4, 0.1);
+  border: 1px solid rgba(251, 188, 4, 0.3);
+  border-radius: 12px;
+  color: #fde047;
+  font-size: 1.125rem;
+}
+
+.urgency strong {
+  color: #fbbc04;
+  font-weight: 800;
+}
+
+.faq {
+  margin-top: 4rem;
+}
+
+.faqTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #ffffff;
+}
+
+.faqGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.faqItem {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.faqItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(66, 133, 244, 0.2);
+}
+
+.faqQuestion {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.faqAnswer {
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+
+  .pricingCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .features {
+    gap: 0.875rem;
+  }
+
+  .featureItem {
+    font-size: 1rem;
+  }
+}

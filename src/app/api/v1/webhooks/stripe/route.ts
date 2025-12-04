@@ -3,6 +3,41 @@ import { stripe } from '@/server/lib/stripe';
 import { paymentRepository } from '@/server/modules/payment/payment.repository';
 import { enrollmentService } from '@/server/modules/enrollment/enrollment.service';
 import { errorResponse, successResponse } from '@/server/utils/response';
+import { getBootcampWelcomeEmailTemplate, getBootcampWelcomeEmailText } from '@/server/lib/email-templates';
+import Stripe from 'stripe';
+
+/**
+ * Enviar email de bienvenida al bootcamp
+ */
+async function sendBootcampWelcomeEmail(email: string, session: Stripe.Checkout.Session) {
+  const htmlContent = getBootcampWelcomeEmailTemplate(email, session);
+  const textContent = getBootcampWelcomeEmailText(email, session);
+  
+  console.log(`
+  📧 Email de bienvenida al bootcamp preparado para: ${email}
+  Session ID: ${session.id}
+  Monto: $${(session.amount_total || 0) / 100}
+  `);
+  
+  // TODO: Integrar con tu servicio de email
+  // Ejemplo con Resend:
+  /*
+  const { Resend } = await import('resend');
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  
+  await resend.emails.send({
+    from: 'Gallo Trader <bootcamp@gallotrader.com>',
+    to: email,
+    subject: '¡Bienvenido al Master Funding Bootcamp! 🎉',
+    html: htmlContent,
+    text: textContent,
+  });
+  */
+  
+  // Por ahora, solo logueamos el contenido
+  console.log('Email HTML generado ✓');
+  console.log('Email Text generado ✓');
+}
 
 /**
  * POST /api/v1/webhooks/stripe
@@ -37,7 +72,22 @@ export async function POST(request: NextRequest) {
         const session = event.data.object;
         
         // Obtener metadata
-        const { userId, programId, paymentId } = session.metadata || {};
+        const { userId, programId, paymentId, product_type } = session.metadata || {};
+
+        // Verificar si es un pago del bootcamp
+        if (product_type === 'bootcamp' && session.customer_email) {
+          console.log(`🎓 Pago de bootcamp completado para ${session.customer_email}`);
+          
+          // Enviar email de bienvenida al bootcamp
+          try {
+            await sendBootcampWelcomeEmail(session.customer_email, session);
+            console.log(`✅ Email de bienvenida enviado a ${session.customer_email}`);
+          } catch (emailError) {
+            console.error('Error enviando email de bienvenida:', emailError);
+            // No fallar el webhook por error de email
+          }
+          break;
+        }
 
         if (!programId) {
           console.error('programId faltante en checkout.session.completed');

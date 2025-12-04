@@ -11,7 +11,13 @@
     "db:migrate": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts",
     "db:studio": "prisma studio",
-    "db:reset": "prisma migrate reset --force && npm run db:seed"
+    "db:reset": "prisma migrate reset --force && npm run db:seed",
+    "test:stripe": "tsx src/tests/validate-stripe.ts",
+    "test:checkout": "tsx src/tests/checkout-flow.test.ts",
+    "railway:setup": "./setup-railway-env.sh",
+    "railway:deploy": "./deploy-railway.sh",
+    "railway:migrate": "prisma migrate deploy",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

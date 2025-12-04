@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSession, signOut } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import styles from './NavBar.module.css';
@@ -26,7 +27,13 @@ export default function NavBar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoIcon}>🐓</span>
+          <Image 
+            src="/gallo_simbolo.png" 
+            alt="Gallo" 
+            width={32} 
+            height={32}
+            className={styles.logoIcon}
+          />
           <span>Gallo Trader</span>
         </Link>
 

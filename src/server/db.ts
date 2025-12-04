@@ -13,7 +13,15 @@ const createPrisma = () => {
     throw new Error('DATABASE_URL no configurada');
   }
 
-  const pool = globalForPrisma.pool ?? new Pool({ connectionString: process.env.DATABASE_URL });
+  // Configurar pool para Supabase Pooler (modo transacción)
+  const pool = globalForPrisma.pool ?? new Pool({ 
+    connectionString: process.env.DATABASE_URL,
+    max: 10, // Aumentar pool para mejor rendimiento
+    min: 2,
+    idleTimeoutMillis: 60000,
+    connectionTimeoutMillis: 5000,
+  });
+  
   if (!globalForPrisma.pool) globalForPrisma.pool = pool;
 
   const adapter = new PrismaPg(pool);

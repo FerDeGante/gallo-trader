@@ -1,0 +1,218 @@
+.container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  opacity: 0;
+  transform: scale(0) translateY(20px);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.container.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.button {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 8px 24px rgba(37, 211, 102, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  overflow: visible;
+}
+
+.button:hover {
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: 
+    0 12px 32px rgba(37, 211, 102, 0.5),
+    0 6px 16px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #2ee472 0%, #128c7e 100%);
+}
+
+.button:active {
+  transform: scale(1.05) translateY(-2px);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  right: calc(100% + 1rem);
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  color: #ffffff;
+  padding: 0.875rem 1.25rem;
+  border-radius: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid rgba(0, 0, 0, 0.95);
+}
+
+.tooltipVisible {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.tooltipText {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #25d366;
+}
+
+.tooltipSubtext {
+  display: block;
+  font-size: 0.8125rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Pulso animado */
+.pulse,
+.pulse2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.6);
+  opacity: 0;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.pulse2 {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Badge de notificación (opcional) */
+.badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
+  background: #ea4335;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(234, 67, 53, 0.4);
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .button {
+    width: 56px;
+    height: 56px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .tooltip {
+    display: none; /* Ocultar tooltip en móvil */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .button {
+    width: 52px;
+    height: 52px;
+  }
+
+  .icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .container,
+  .button,
+  .tooltip {
+    animation: none;
+    transition: none;
+  }
+
+  .pulse,
+  .pulse2 {
+    display: none;
+  }
+}

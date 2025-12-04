@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Bootcamp intensivo para conseguir tu primera cuenta fondeada de $100K en 7 días',
 };
 
-export default function LandingLayout({
+export default function BootcampLayout({
   children,
 }: {
   children: React.ReactNode;

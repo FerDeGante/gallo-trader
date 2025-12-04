@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -13,10 +14,16 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.topRow}>
           <div className={styles.brand}>
-            <div className={styles.logo}>🐓</div>
+            <Image 
+              src="/gallo_simbolo.png" 
+              alt="Gallo Trader" 
+              width={48} 
+              height={48}
+              className={styles.logo}
+            />
             <div>
               <p className={styles.kicker}>Gallo Trader</p>
-              <p className={styles.title}>Mentoría de trading institucional</p>
+              <p className={styles.title}>Master Funding Bootcamp</p>
             </div>
           </div>
           <div className={styles.ctaGroup}>
@@ -25,7 +32,7 @@ export default function Footer() {
               Inscripciones abiertas
             </div>
             <a href="/#precios" className={styles.primaryCta}>
-              Aplicar ahora
+              Inscribirme - $1,000
             </a>
           </div>
         </div>
@@ -33,15 +40,15 @@ export default function Footer() {
         <div className={styles.contentGrid}>
           <div className={styles.about}>
             <p className={styles.description}>
-              Academia de trading profesional enfocada en consistencia matemática y disciplina emocional.
-              Formamos traders que toman decisiones con datos, no con impulsos.
+              Bootcamp intensivo de 7 días para conseguir tu primera cuenta fondeada de $100K.
+              Sistema probado con mentoría directa de Gallo.
             </p>
 
             <div className={styles.statsGrid}>
               {[
-                { label: 'Miembros activos', value: '+200' },
-                { label: 'Sesiones en vivo', value: '16 / cohorte' },
-                { label: 'Acceso', value: 'De por vida' },
+                { label: 'Duración', value: '7 días' },
+                { label: 'Sesiones en vivo', value: 'Diarias' },
+                { label: 'Inversión', value: '$1,000' },
               ].map((item) => (
                 <div key={item.label} className={styles.statCard}>
                   <p className={styles.statLabel}>{item.label}</p>
@@ -92,19 +99,20 @@ export default function Footer() {
 
           <div className={styles.linksGrid}>
             <div>
-              <h4 className={styles.linksTitle}>Explora</h4>
+              <h4 className={styles.linksTitle}>Bootcamp</h4>
               <ul className={styles.linkList}>
-                <li><a href="/#programa">Programa</a></li>
-                <li><a href="/#mentoria">Mentoría en vivo</a></li>
-                <li><a href="/#precios">Planes y precios</a></li>
+                <li><a href="/#valor">Beneficios</a></li>
+                <li><a href="/#programa">Programa 7 Días</a></li>
+                <li><a href="/#bonos">Bonos Incluidos</a></li>
+                <li><a href="/#precios">Inscripción</a></li>
               </ul>
             </div>
             <div>
               <h4 className={styles.linksTitle}>Recursos</h4>
               <ul className={styles.linkList}>
-                <li><a href="/login">Mi Aula</a></li>
+                <li><a href="/academy">Academia Completa</a></li>
+                <li><a href="/aula">Mi Aula</a></li>
                 <li><a href="mailto:contacto@gallotrader.com">Contacto</a></li>
-                <li><a href="/#programa">Calendario de sesiones</a></li>
               </ul>
             </div>
             <div>
