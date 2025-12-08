@@ -51,12 +51,12 @@ export default function BootcampPricingSection() {
         <div className={styles.pricingCard}>
           <div className={styles.cardHeader}>
             <div className={styles.planName}>Master Funding Bootcamp</div>
-            <div className={styles.planDuration}>7 Días Intensivos</div>
+            <div className={styles.planDuration}>Acceso Completo</div>
           </div>
 
           <div className={styles.priceSection}>
             <div className={styles.priceValue}>
-              <span className={styles.currency}>$</span>1,000
+              <span className={styles.currency}>$</span>2,026
               <span className={styles.period}>USD</span>
             </div>
             <div className={styles.priceNote}>Pago único • Sin suscripciones</div>
@@ -65,11 +65,15 @@ export default function BootcampPricingSection() {
           <div className={styles.features}>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>7 sesiones en vivo con Gallo</span>
+              <span>Módulo A: Análisis y Mentalidad completo</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Estrategia completa paso a paso</span>
+              <span>Módulo B: Todo sobre cuentas de fondeo</span>
+            </div>
+            <div className={styles.featureItem}>
+              <span className={styles.checkIcon}>✓</span>
+              <span>Módulo C: Activación y replicador</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
@@ -77,23 +81,19 @@ export default function BootcampPricingSection() {
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Templates y herramientas incluidas</span>
+              <span>Todos los descargables y herramientas</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Soporte hasta que pases tu cuenta</span>
+              <span>Configuración completa NinjaTrader</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Plan de trading personalizado</span>
+              <span>Manuales y guías detalladas</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Grabaciones de todas las sesiones</span>
-            </div>
-            <div className={styles.featureItem}>
-              <span className={styles.checkIcon}>✓</span>
-              <span>Bonos valorados en $1,388</span>
+              <span>Bonos valorados en $2,100</span>
             </div>
           </div>
 
@@ -104,7 +104,7 @@ export default function BootcampPricingSection() {
             isLoading={isLoading}
             className={styles.ctaButton}
           >
-            🚀 INSCRIBIRME AL BOOTCAMP - $1,000 USD
+            🚀 INSCRIBIRME AL BOOTCAMP - $2,026 USD
           </Button>
           
           <div className={styles.ctaSubtext}>

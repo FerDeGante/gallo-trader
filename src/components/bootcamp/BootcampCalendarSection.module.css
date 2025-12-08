@@ -1,0 +1,251 @@
+.section {
+  position: relative;
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #f8f9fa 0%, #FFFFFF 100%);
+  color: #202c56;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: rgba(172, 150, 90, 0.1);
+  border: 1px solid rgba(172, 150, 90, 0.3);
+  border-radius: 100px;
+  color: #ac965a;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #ac965a 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  line-height: 1.6;
+}
+
+.calendarsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.calendarCard {
+  background: #FFFFFF;
+  border: 2px solid rgba(172, 150, 90, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(32, 44, 86, 0.05);
+}
+
+.calendarCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(172, 150, 90, 0.25);
+  border-color: rgba(172, 150, 90, 0.6);
+}
+
+.calendarHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(172, 150, 90, 0.2);
+}
+
+.calendarMonth {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #ac965a 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.weekDay {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #ac965a;
+  text-align: center;
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.emptyDay {
+  aspect-ratio: 1;
+}
+
+.day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 0.25rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.day:hover {
+  background: rgba(172, 150, 90, 0.1);
+  border-color: rgba(172, 150, 90, 0.3);
+}
+
+.dayNumber {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.eventLabel {
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  line-height: 1.1;
+  padding: 0.15rem;
+  border-radius: 4px;
+  margin-top: 0.15rem;
+  z-index: 2;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.eventCumple {
+  background: rgba(134, 239, 172, 0.2);
+  border-color: rgba(134, 239, 172, 0.4);
+}
+
+.eventCumple .eventLabel {
+  background: #86efac;
+}
+
+.eventMasterclass {
+  background: rgba(147, 51, 234, 0.2);
+  border-color: rgba(147, 51, 234, 0.4);
+}
+
+.eventMasterclass .eventLabel {
+  background: #9333ea;
+  color: #ffffff;
+}
+
+.eventInscripcion {
+  background: rgba(251, 191, 36, 0.2);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+.eventInscripcion .eventLabel {
+  background: #fbbf24;
+}
+
+.eventSession {
+  background: rgba(251, 191, 36, 0.2);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+.eventSession .eventLabel {
+  background: #fbbf24;
+}
+
+.eventHoliday {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.eventHoliday .eventLabel {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.timeSlot {
+  text-align: center;
+  padding: 0.75rem;
+  background: rgba(32, 44, 86, 0.5);
+  border: 1px solid rgba(172, 150, 90, 0.3);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ac965a;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+
+  .calendarsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .weekDay {
+    font-size: 0.6rem;
+    padding: 0.25rem 0;
+  }
+
+  .dayNumber {
+    font-size: 0.75rem;
+  }
+
+  .eventLabel {
+    font-size: 0.45rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .calendarsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

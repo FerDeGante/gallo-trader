@@ -4,7 +4,10 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Master Funding Bootcamp - Gallo Trader',
-  description: 'Bootcamp intensivo para conseguir tu primera cuenta fondeada de $100K en 7 días',
+  description: 'Bootcamp intensivo de 6 meses para conseguir tu primera cuenta fondeada de $100K. Sistema probado con mentoría directa.',
+  icons: {
+    icon: '/Logo.png',
+  },
 };
 
 export default function BootcampLayout({

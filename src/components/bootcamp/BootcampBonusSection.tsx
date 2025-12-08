@@ -5,28 +5,28 @@ import styles from './BootcampBonusSection.module.css';
 export default function BootcampBonusSection() {
   const bonuses = [
     {
-      icon: '🎁',
-      title: 'Templates de Trading',
-      value: '$297',
-      description: 'Plantillas pre-configuradas para TradingView con los setups exactos de Gallo',
+      icon: '📊',
+      title: 'Descargables y Herramientas',
+      value: '$600',
+      description: 'Data de estrategia, calculadora de posición, bitácora de trading y más recursos descargables',
     },
     {
-      icon: '📱',
+      icon: '💬',
       title: 'Acceso a Discord VIP',
-      value: '$497',
-      description: 'Grupo exclusivo con traders activos pasando cuentas fondeadas',
+      value: '$600',
+      description: 'Grupo exclusivo con traders activos pasando cuentas fondeadas y soporte continuo',
     },
     {
       icon: '🎯',
-      title: 'Checklist de Evaluación',
-      value: '$197',
-      description: 'Sistema paso a paso para pasar cualquier challenge de prop firm',
+      title: 'Configuraciones NinjaTrader',
+      value: '$500',
+      description: 'Setup completo de EMAs, estocástico y Axelia Risk para operar desde el día 1',
     },
     {
-      icon: '📊',
-      title: 'Dashboard de Seguimiento',
-      value: '$397',
-      description: 'Herramienta para trackear tu progreso y estadísticas de trading',
+      icon: '📚',
+      title: 'Manuales y Guías',
+      value: '$400',
+      description: 'Manuales de activación de cuentas, replicador y administración de fondeo',
     },
   ];
 
@@ -70,7 +70,7 @@ export default function BootcampBonusSection() {
           <div className={styles.valueDivider}></div>
           <div className={styles.valueRow}>
             <span className={styles.valueLabel}>Tu inversión hoy:</span>
-            <span className={styles.valuePrice}>$1,000</span>
+            <span className={styles.valuePrice}>$2,035</span>
           </div>
           <div className={styles.savings}>
             Ahorras ${totalValue} • Solo por tiempo limitado

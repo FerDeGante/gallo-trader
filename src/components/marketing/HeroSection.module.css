@@ -157,6 +157,11 @@
   font-size: 1.125rem;
   padding: 1rem 2.5rem;
   min-width: 200px;
+  color: #ffffff !important;
+}
+
+.secondaryCta * {
+  color: #ffffff !important;
 }
 
 .statsGrid {

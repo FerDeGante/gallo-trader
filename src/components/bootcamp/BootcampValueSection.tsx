@@ -6,33 +6,33 @@ export default function BootcampValueSection() {
   const benefits = [
     {
       icon: '🎯',
-      title: 'Estrategia Lista para Usar',
-      description: 'El mismo sistema que Gallo usa para pasar cuentas fondeadas consistentemente',
+      title: 'Estrategia Probada',
+      description: 'Sistema completo con medias móviles y estocástico confirmado con data real',
     },
     {
       icon: '⚡',
-      title: 'Resultados en 7 Días',
-      description: 'Programa intensivo diseñado para que pases tu evaluación rápidamente',
+      title: 'Módulos Integrales',
+      description: 'Todo el conocimiento desde mentalidad hasta activación de cuentas fondeadas',
     },
     {
       icon: '💎',
-      title: 'Mentoría Directa',
-      description: 'Sesiones en vivo diarias con Gallo para resolver todas tus dudas',
+      title: 'Herramientas Profesionales',
+      description: 'Calculadoras de posición, bitácora, configuración de NinjaTrader y más',
     },
     {
       icon: '📊',
-      title: 'Plan de Trading Completo',
-      description: 'Desde la psicología hasta la ejecución, todo lo que necesitas saber',
+      title: 'Plan Completo de Fondeo',
+      description: 'Desde la práctica en demo hasta gestionar múltiples cuentas fondeadas',
     },
     {
       icon: '🎓',
-      title: 'Comunidad Premium',
-      description: 'Acceso exclusivo al grupo de Discord con traders que están pasando cuentas',
+      title: 'Comunidad Discord VIP',
+      description: 'Acceso exclusivo al grupo con traders activos pasando evaluaciones',
     },
     {
       icon: '🔥',
-      title: 'Soporte Continuo',
-      description: 'Acompañamiento directo hasta que pases tu cuenta fondeada',
+      title: 'Descargables y Manuales',
+      description: 'Todo el material necesario para operar con confianza y disciplina',
     },
   ];
 

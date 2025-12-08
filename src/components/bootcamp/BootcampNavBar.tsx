@@ -9,7 +9,7 @@ export default function BootcampNavBar() {
   const [scrolled, setScrolled] = useState(false);
   const navLinks = [
     { href: '#valor', label: 'Beneficios' },
-    { href: '#programa', label: 'Programa 7 Días' },
+    { href: '#programa', label: 'Programa' },
     { href: '#bonos', label: 'Bonos' },
     { href: '#precios', label: 'Inscripción' },
   ];
@@ -33,15 +33,14 @@ export default function BootcampNavBar() {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}>
       <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
+        <Link href="/bootcamp" className={styles.logo}>
           <Image 
-            src="/gallo_simbolo.png" 
-            alt="Gallo" 
-            width={48} 
+            src="/Logo.png" 
+            alt="Master Funding Bootcamp" 
+            width={180} 
             height={48}
             className={styles.logoIcon}
           />
-          <span>Gallo Trader</span>
         </Link>
 
         <div className={`${styles.navLinks} hidden md:flex`}>
@@ -54,7 +53,7 @@ export default function BootcampNavBar() {
 
         <div className={styles.actions}>
           <a href="#precios" onClick={scrollToCheckout} className={styles.ctaBtn}>
-            🚀 Inscribirme - $1,000
+            🚀 Inscribirme - $2,026
           </a>
         </div>
       </div>
@@ -65,10 +64,10 @@ export default function BootcampNavBar() {
           <div className={styles.floatingContent}>
             <div className={styles.floatingText}>
               <span className={styles.floatingTitle}>Master Funding Bootcamp</span>
-              <span className={styles.floatingSubtitle}>Solo 15 cupos • Inicia en 7 días</span>
+              <span className={styles.floatingSubtitle}>Solo 15 cupos • Inicia pronto</span>
             </div>
             <a href="#precios" onClick={scrollToCheckout} className={styles.floatingButton}>
-              Asegurar mi Cupo - $1,000
+              Asegurar mi Cupo - $2,026
             </a>
           </div>
         </div>

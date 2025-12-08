@@ -28,10 +28,10 @@ export async function POST(request: NextRequest) {
             currency: 'usd',
             product_data: {
               name: 'Master Funding Bootcamp',
-              description: '7 días intensivos para conseguir tu primera cuenta fondeada de $100K',
+              description: 'Programa completo con módulos integrales, herramientas y acceso a Discord VIP',
               images: ['https://gallotrader.com/bootcamp-cover.jpg'],
             },
-            unit_amount: 100000, // $1,000.00 en centavos
+            unit_amount: 202600, // $2,026.00 en centavos
           },
           quantity: 1,
         },
@@ -39,7 +39,6 @@ export async function POST(request: NextRequest) {
       mode: 'payment',
       success_url: successUrl,
       cancel_url: cancelUrl,
-      billing_address_collection: 'required',
       customer_email: undefined, // Stripe pedirá el email
       metadata: {
         product_type: 'bootcamp',

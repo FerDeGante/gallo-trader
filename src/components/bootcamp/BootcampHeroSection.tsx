@@ -60,15 +60,15 @@ export default function BootcampHeroSection() {
         </h1>
         
         <p className={styles.subtitle}>
-          Tu primera cuenta fondeada de $100K en tiempo récord
+          Todo lo que necesitas saber antes del fondeo
           <br className="hidden md:block" />
-          7 días intensivos • Estrategia probada • Acompañamiento directo
+          Análisis, mentalidad y herramientas • Estrategia probada • Acompañamiento directo
         </p>
 
         <div className={styles.priceBox}>
           <div className={styles.priceLabel}>Inversión del Bootcamp</div>
           <div className={styles.priceValue}>
-            <span className={styles.currency}>$</span>1,000
+            <span className={styles.currency}>$</span>2,026
             <span className={styles.pricePeriod}>USD</span>
           </div>
           <div className={styles.priceNote}>Pago único • Acceso inmediato</div>
@@ -82,7 +82,7 @@ export default function BootcampHeroSection() {
             isLoading={isLoading}
             className={styles.mainCta}
           >
-            🚀 Asegurar mi Cupo Ahora - $1,000
+            🚀 Asegurar mi Cupo Ahora - $2,026
           </Button>
           <div className={styles.ctaNote}>
             <span className={styles.checkIcon}>✓</span>
@@ -92,9 +92,9 @@ export default function BootcampHeroSection() {
 
         <div className={styles.statsGrid}>
           {[
-            { icon: '⚡', text: '7 días intensivos', sub: 'Resultados rápidos' },
-            { icon: '💰', text: 'Cuenta $100K', sub: 'Tu primera prop firm' },
-            { icon: '🎯', text: 'Estrategia probada', sub: 'Sistema de Gallo' }
+            { icon: '⚡', text: 'Módulos integrales', sub: 'Con herramientas' },
+            { icon: '💰', text: 'Fondeo rápido', sub: 'Estrategia probada' },
+            { icon: '🎯', text: 'Discord exclusivo', sub: 'Comunidad activa' }
           ].map((item, index) => (
             <div key={index} className={styles.statCard}>
               <div className={styles.statIcon}>{item.icon}</div>

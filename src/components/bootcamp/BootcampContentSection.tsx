@@ -3,76 +3,55 @@
 import styles from './BootcampContentSection.module.css';
 
 export default function BootcampContentSection() {
-  const days = [
+  const modules = [
     {
-      day: 'Día 1',
-      title: 'Fundamentos y Mentalidad',
+      module: 'MÓDULO A',
+      title: 'Todo lo que tienen que saber antes del fondeo',
+      subtitle: '(Análisis / Mentalidad / 2 semanas)',
       topics: [
-        'Psicología del trader profesional',
-        'Gestión de riesgo en prop firms',
-        'Configuración del entorno de trading',
-        'Análisis de las reglas de evaluación',
+        'Introducción al fondeo rápido',
+        'La mentalidad del trader exitoso',
+        '¿Por qué el modelo funciona?',
+        '¿Qué es una empresa de fondeo?',
+        'Diferencia entre CFDs vs Futuros',
+        'Qué NO debes hacer',
+        'La data dice que lo conseguirás',
+        'Descargable de data de estrategia de medias móviles y estocástico con confirmación',
+        'La estrategia técnica, paso a paso',
+        'Práctica una semana en demo',
+        'Cómo crear tu cuenta demo en Ninja Trader',
+        'Cómo configurar desde cero EMA\'s y estocástico en NinjaTrader',
+        'Cómo usar la tabla de riesgo para calcular el tamaño de tu posición',
+        'Herramienta para calcular la posición de forma automática',
+        'Como instalar Axelia Risk',
       ],
+      color: '#86efac', // Verde claro
     },
     {
-      day: 'Día 2',
-      title: 'Estrategia Core',
+      module: 'MÓDULO B',
+      title: 'Todo lo que deben de saber durante',
+      subtitle: '(Cuentas / 1 semana)',
       topics: [
-        'El sistema de Gallo paso a paso',
-        'Identificación de setups de alta probabilidad',
-        'Timeframes y sincronización',
-        'Práctica en simulador',
+        'Como comprar mis cuentas de fondeo',
+        'Como administrar mis cuentas de fondeo',
+        'Descargable Bitácora',
+        'Como gestionar mi riesgo por trade',
+        'Descargable de herramienta de tamaño de posición',
+        'Descargable de calculo de tamaño de posición mediante Excel',
+        'Como colocar SL y TP en NinjaTrader',
       ],
+      color: '#fde047', // Amarillo
     },
     {
-      day: 'Día 3',
-      title: 'Ejecución Perfecta',
+      module: 'MÓDULO C',
+      title: 'Todo lo que deben de saber después de fondearse',
+      subtitle: '(Activación / Replicador)',
       topics: [
-        'Entrada, stop loss y take profit',
-        'Trailing stop y gestión de operaciones',
-        'Errores comunes y cómo evitarlos',
-        'Sesión de trading en vivo',
+        'Manual como activar una cuenta fondeada',
+        '¿Quemaste una cuenta de fondeo en Apex?',
+        'Como usar un replicador de cuentas',
       ],
-    },
-    {
-      day: 'Día 4',
-      title: 'Plan de Trading',
-      topics: [
-        'Creación de tu plan personalizado',
-        'Diario de trading y análisis',
-        'Horarios óptimos para operar',
-        'Revisión de operaciones del grupo',
-      ],
-    },
-    {
-      day: 'Día 5',
-      title: 'Práctica Intensiva',
-      topics: [
-        'Trading en simulador supervisado',
-        'Feedback personalizado de Gallo',
-        'Refinamiento de la estrategia',
-        'Preparación psicológica',
-      ],
-    },
-    {
-      day: 'Día 6',
-      title: 'Challenge Day',
-      topics: [
-        'Inicio de tu evaluación real',
-        'Soporte en tiempo real',
-        'Análisis de cada operación',
-        'Ajustes según el mercado',
-      ],
-    },
-    {
-      day: 'Día 7',
-      title: 'Revisión y Siguientes Pasos',
-      topics: [
-        'Análisis completo de tu semana',
-        'Plan de continuación',
-        'Acceso a comunidad premium',
-        'Soporte post-bootcamp',
-      ],
+      color: '#93c5fd', // Azul claro
     },
   ];
 
@@ -80,21 +59,22 @@ export default function BootcampContentSection() {
     <section className={styles.section} id="programa">
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.badge}>Programa Intensivo</span>
+          <span className={styles.badge}>Módulos Integrales</span>
           <h2 className={styles.title}>
-            7 días que cambiarán tu <span className={styles.highlight}>carrera de trading</span>
+            Contenido completo del <span className={styles.highlight}>Master Funding Bootcamp</span>
           </h2>
           <p className={styles.subtitle}>
-            Cada día está diseñado para construir sobre el anterior, llevándote desde cero hasta estar listo para tu cuenta fondeada.
+            Tres módulos diseñados para llevarte desde cero hasta conseguir tu cuenta fondeada con todo el conocimiento y herramientas necesarias.
           </p>
         </div>
 
         <div className={styles.timeline}>
-          {days.map((item, index) => (
+          {modules.map((item, index) => (
             <div key={index} className={styles.dayCard}>
-              <div className={styles.dayNumber}>{item.day}</div>
+              <div className={styles.dayNumber}>{item.module}</div>
               <div className={styles.dayContent}>
                 <h3 className={styles.dayTitle}>{item.title}</h3>
+                <p className={styles.daySubtitle}>{item.subtitle}</p>
                 <ul className={styles.topicsList}>
                   {item.topics.map((topic, i) => (
                     <li key={i} className={styles.topic}>
@@ -106,6 +86,14 @@ export default function BootcampContentSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className={styles.discordSection}>
+          <div className={styles.discordIcon}>💬</div>
+          <h3 className={styles.discordTitle}>Acceso a Discord Exclusivo</h3>
+          <p className={styles.discordText}>
+            Únete a nuestra comunidad de traders activos, comparte experiencias y recibe soporte directo durante tu proceso de fondeo.
+          </p>
         </div>
       </div>
     </section>

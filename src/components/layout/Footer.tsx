@@ -15,15 +15,15 @@ export default function Footer() {
         <div className={styles.topRow}>
           <div className={styles.brand}>
             <Image 
-              src="/gallo_simbolo.png" 
-              alt="Gallo Trader" 
+              src="/Logo.png" 
+              alt="Master Funding Bootcamp" 
               width={48} 
               height={48}
               className={styles.logo}
             />
             <div>
-              <p className={styles.kicker}>Gallo Trader</p>
               <p className={styles.title}>Master Funding Bootcamp</p>
+              <p className={styles.kicker}>by Gallo Trader</p>
             </div>
           </div>
           <div className={styles.ctaGroup}>
@@ -32,7 +32,7 @@ export default function Footer() {
               Inscripciones abiertas
             </div>
             <a href="/#precios" className={styles.primaryCta}>
-              Inscribirme - $1,000
+              Inscribirme - $2,026
             </a>
           </div>
         </div>
@@ -40,15 +40,15 @@ export default function Footer() {
         <div className={styles.contentGrid}>
           <div className={styles.about}>
             <p className={styles.description}>
-              Bootcamp intensivo de 7 días para conseguir tu primera cuenta fondeada de $100K.
+              Bootcamp intensivo de 6 meses para conseguir tu primera cuenta fondeada de $100K.
               Sistema probado con mentoría directa de Gallo.
             </p>
 
             <div className={styles.statsGrid}>
               {[
-                { label: 'Duración', value: '7 días' },
-                { label: 'Sesiones en vivo', value: 'Diarias' },
-                { label: 'Inversión', value: '$1,000' },
+                { label: 'Duración', value: '6 meses' },
+                { label: 'Sesiones en vivo', value: 'Semanales' },
+                { label: 'Inversión', value: '$2,026' },
               ].map((item) => (
                 <div key={item.label} className={styles.statCard}>
                   <p className={styles.statLabel}>{item.label}</p>
@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottomBar}>
-          <p>© {currentYear} Gallo Trader. Todos los derechos reservados.</p>
+          <p>© {currentYear} Master Funding Bootcamp. Todos los derechos reservados.</p>
           <p className={styles.risk}>
             ⚠️ Advertencia de riesgo: El trading conlleva riesgos significativos. Este es un programa educativo, no asesoría de inversión.
           </p>

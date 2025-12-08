@@ -10,8 +10,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Gallo Trader - Programa Premium de Trading Profesional",
-  description: "Domina el trading con nuestra estrategia matemática probada. 4 meses de formación intensiva, mentoría en vivo y acceso de por vida. Aprende a operar con disciplina y construye una fuente de ingresos consistente.",
+  title: "Master Funding Bootcamp - Gallo Trader",
+  description: "Bootcamp intensivo de 6 meses para conseguir tu primera cuenta fondeada de $100K. Sistema probado con mentoría directa de Gallo.",
+  icons: {
+    icon: '/Logo.png',
+  },
 };
 
 export default function RootLayout({
