@@ -38,7 +38,7 @@ export default function BootcampVideoSection() {
             <div className={styles.statLabel}>Programa Intensivo</div>
           </div>
           <div className={styles.statItem}>
-            <div className={styles.statValue}>$100K</div>
+            <div className={styles.statValue}>$50K</div>
             <div className={styles.statLabel}>Tu Primera Cuenta</div>
           </div>
         </div>

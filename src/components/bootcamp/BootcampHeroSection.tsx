@@ -62,7 +62,7 @@ export default function BootcampHeroSection() {
         <p className={styles.subtitle}>
           Todo lo que necesitas saber antes del fondeo
           <br className="hidden md:block" />
-          Análisis, mentalidad y herramientas • Estrategia probada • Acompañamiento directo
+          Análisis, mentalidad y herramientas • Estrategia probada • 6 meses de acompañamiento
         </p>
 
         <div className={styles.priceBox}>
