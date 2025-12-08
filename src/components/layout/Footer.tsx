@@ -31,7 +31,7 @@ export default function Footer() {
               <span className={styles.statusDot} />
               Inscripciones abiertas
             </div>
-            <a href="/#precios" className={styles.primaryCta}>
+            <a href="/api/v1/checkout/bootcamp" className={styles.primaryCta}>
               Inscribirme - $2,026
             </a>
           </div>

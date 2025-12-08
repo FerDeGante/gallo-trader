@@ -52,7 +52,7 @@ export default function BootcampNavBar() {
         </div>
 
         <div className={styles.actions}>
-          <a href="#precios" onClick={scrollToCheckout} className={styles.ctaBtn}>
+          <a href="/api/v1/checkout/bootcamp" className={styles.ctaBtn}>
             🚀 Inscribirme - $2,026
           </a>
         </div>
@@ -66,7 +66,7 @@ export default function BootcampNavBar() {
               <span className={styles.floatingTitle}>Master Funding Bootcamp</span>
               <span className={styles.floatingSubtitle}>Solo 15 cupos • Inicia pronto</span>
             </div>
-            <a href="#precios" onClick={scrollToCheckout} className={styles.floatingButton}>
+            <a href="/api/v1/checkout/bootcamp" className={styles.floatingButton}>
               Asegurar mi Cupo - $2,026
             </a>
           </div>
