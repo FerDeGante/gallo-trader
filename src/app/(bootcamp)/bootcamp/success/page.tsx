@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import styles from './success.module.css';
 
-export default function BootcampSuccessPage() {
+function SuccessPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isVerifying, setIsVerifying] = useState(true);
@@ -28,7 +28,8 @@ export default function BootcampSuccessPage() {
 
         console.log('📋 Verification response:', { status: response.status, data });
 
-        if (!response.ok || !data.success) {
+        // Verificar que la respuesta sea OK y tenga data (no error)
+        if (!response.ok || data.error) {
           console.log('❌ Invalid session, redirecting...', data);
           router.push('/bootcamp');
           return;
@@ -36,7 +37,7 @@ export default function BootcampSuccessPage() {
 
         // Pago verificado correctamente
         console.log('✅ Payment verified:', data.data);
-        setCustomerEmail(data.data.customer_email);
+        setCustomerEmail(data.data?.customer_email || null);
         setIsVerifying(false);
       } catch (error) {
         console.error('❌ Error verifying payment:', error);
@@ -145,5 +146,26 @@ export default function BootcampSuccessPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function BootcampSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className={styles.container}>
+        <div className={styles.background}>
+          <div className={styles.gradientBlob1}></div>
+          <div className={styles.gradientBlob2}></div>
+        </div>
+        <div className={styles.content}>
+          <div className={styles.loader}>
+            <div className={styles.spinner}></div>
+            <p className={styles.loadingText}>Cargando...</p>
+          </div>
+        </div>
+      </div>
+    }>
+      <SuccessPageContent />
+    </Suspense>
   );
 }
