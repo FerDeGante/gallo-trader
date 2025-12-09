@@ -289,13 +289,13 @@
 .statTitle {
   font-size: 1rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #202c56;
   margin-bottom: 0.25rem;
 }
 
 .statSub {
   font-size: 0.875rem;
-  color: #64748b;
+  color: #475569;
 }
 
 .urgencyBanner {

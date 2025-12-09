@@ -1,12 +1,70 @@
-import type { Metadata } from 'next';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import styles from './success.module.css';
 
-export const metadata: Metadata = {
-  title: '¡Bienvenido al Bootcamp! - Gallo Trader',
-  description: 'Tu inscripción ha sido confirmada',
-};
-
 export default function BootcampSuccessPage() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [isVerifying, setIsVerifying] = useState(true);
+  const [customerEmail, setCustomerEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    const verifyPayment = async () => {
+      const sessionId = searchParams.get('session_id');
+
+      // Si no hay session_id, redirigir
+      if (!sessionId) {
+        console.log('❌ No session_id found, redirecting...');
+        router.push('/bootcamp');
+        return;
+      }
+
+      try {
+        // Verificar con el backend que el pago es válido
+        const response = await fetch(`/api/v1/checkout/verify-session?session_id=${sessionId}`);
+        const data = await response.json();
+
+        console.log('📋 Verification response:', { status: response.status, data });
+
+        if (!response.ok || !data.success) {
+          console.log('❌ Invalid session, redirecting...', data);
+          router.push('/bootcamp');
+          return;
+        }
+
+        // Pago verificado correctamente
+        console.log('✅ Payment verified:', data.data);
+        setCustomerEmail(data.data.customer_email);
+        setIsVerifying(false);
+      } catch (error) {
+        console.error('❌ Error verifying payment:', error);
+        router.push('/bootcamp');
+      }
+    };
+
+    verifyPayment();
+  }, [searchParams, router]);
+
+  // Mostrar loader mientras verifica
+  if (isVerifying) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.background}>
+          <div className={styles.gradientBlob1}></div>
+          <div className={styles.gradientBlob2}></div>
+        </div>
+        <div className={styles.content}>
+          <div className={styles.loader}>
+            <div className={styles.spinner}></div>
+            <p className={styles.loadingText}>Verificando tu pago...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.background}>
@@ -27,25 +85,12 @@ export default function BootcampSuccessPage() {
           Tu inscripción ha sido confirmada. Estás a punto de comenzar tu camino hacia tu primera cuenta fondeada.
         </p>
 
-        <div className={styles.card}>
-          <h2 className={styles.cardTitle}>📧 Revisa tu correo electrónico</h2>
-          <p className={styles.cardText}>
-            Te hemos enviado un email de confirmación con:
-          </p>
-          <ul className={styles.list}>
-            <li>Enlace de acceso al grupo de Discord VIP</li>
-            <li>Calendario con las fechas de las sesiones en vivo</li>
-            <li>Guía de preparación para el primer día</li>
-            <li>Instrucciones para configurar tu entorno de trading</li>
-          </ul>
-        </div>
-
         <div className={styles.discordSection}>
           <h2 className={styles.discordTitle}>
             🎮 Únete ahora al Discord VIP
           </h2>
           <p className={styles.discordText}>
-            Conecta con otros participantes del bootcamp y comienza a prepararte
+            Conecta con otros participantes del bootcamp, accede a los materiales exclusivos y comienza tu preparación
           </p>
           <a 
             href="https://discord.gg/YFrN3mDk" 
@@ -53,7 +98,7 @@ export default function BootcampSuccessPage() {
             rel="noopener noreferrer"
             className={styles.discordButton}
           >
-            Unirme a Discord
+            Unirme a Discord VIP
           </a>
         </div>
 
@@ -72,9 +117,9 @@ export default function BootcampSuccessPage() {
             <div className={styles.step}>
               <div className={styles.stepNumber}>2</div>
               <div className={styles.stepContent}>
-                <h4 className={styles.stepTitle}>Configura tu setup</h4>
+                <h4 className={styles.stepTitle}>Revisa los materiales</h4>
                 <p className={styles.stepText}>
-                  Sigue la guía de preparación que recibiste por email
+                  Encuentra toda la información y recursos en Discord
                 </p>
               </div>
             </div>
@@ -83,7 +128,7 @@ export default function BootcampSuccessPage() {
               <div className={styles.stepContent}>
                 <h4 className={styles.stepTitle}>Prepárate mentalmente</h4>
                 <p className={styles.stepText}>
-                  Los próximos 7 días serán intensivos y transformadores
+                  Las próximas semanas serán intensivas y transformadoras
                 </p>
               </div>
             </div>
@@ -92,7 +137,7 @@ export default function BootcampSuccessPage() {
 
         <div className={styles.footer}>
           <p className={styles.footerText}>
-            ¿Tienes preguntas? Escríbenos en Discord o responde al email de confirmación.
+            ¿Tienes preguntas? Escríbenos en Discord, ahí estará todo el equipo listo para apoyarte.
           </p>
           <p className={styles.footerNote}>
             Nos vemos en el bootcamp 🚀

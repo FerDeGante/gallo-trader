@@ -60,9 +60,9 @@ export default function BootcampHeroSection() {
         </h1>
         
         <p className={styles.subtitle}>
-          Todo lo que necesitas saber antes del fondeo
+          ¡Fondéate con 50K en pocas semanas!
           <br className="hidden md:block" />
-          Análisis, mentalidad y herramientas • Estrategia probada • 6 meses de acompañamiento
+          Estrategia fácil y clara probada en más de 700 trades • Acompañamiento de traders fondeados para que logres tus metas • Modelo de fondeo paso a paso para conseguir 1M usd ó ¡más!
         </p>
 
         <div className={styles.priceBox}>
@@ -92,9 +92,9 @@ export default function BootcampHeroSection() {
 
         <div className={styles.statsGrid}>
           {[
-            { icon: '⚡', text: 'Módulos integrales', sub: 'Con herramientas' },
-            { icon: '💰', text: 'Fondeo rápido', sub: 'Estrategia probada' },
-            { icon: '🎯', text: 'Discord exclusivo', sub: 'Comunidad activa' }
+            { icon: '⚡', text: 'Módulos Integrales', sub: 'Con Herramientas' },
+            { icon: '💰', text: 'Fondeo Rápido', sub: 'Estrategia Probada' },
+            { icon: '🎯', text: 'Discord Exclusivo', sub: 'Comunidad Activa' }
           ].map((item, index) => (
             <div key={index} className={styles.statCard}>
               <div className={styles.statIcon}>{item.icon}</div>

@@ -12,7 +12,13 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
  */
 export async function GET(request: NextRequest) {
   try {
-    const origin = request.headers.get('origin') || 'http://localhost:3002';
+    // Obtener el origin correcto
+    const origin = request.headers.get('origin') 
+      || request.headers.get('referer')?.replace(/\/$/, '').split('/').slice(0, 3).join('/')
+      || `${request.nextUrl.protocol}//${request.nextUrl.host}`
+      || 'http://localhost:3002';
+    
+    console.log('🔍 Creating checkout session with origin:', origin);
     
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -32,7 +38,7 @@ export async function GET(request: NextRequest) {
       ],
       mode: 'payment',
       allow_promotion_codes: true,
-      success_url: `${origin}/bootcamp/success`,
+      success_url: `${origin}/bootcamp/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/bootcamp`,
       customer_email: undefined,
       metadata: {
@@ -40,6 +46,10 @@ export async function GET(request: NextRequest) {
         bootcamp_name: 'Master Funding Bootcamp',
       },
     });
+
+    console.log('✅ Checkout session created:', session.id);
+    console.log('📧 Success URL:', `${origin}/bootcamp/success?session_id={CHECKOUT_SESSION_ID}`);
+    console.log('🔗 Redirect URL:', session.url);
 
     return Response.redirect(session.url!, 303);
   } catch (error) {
@@ -61,6 +71,11 @@ export async function POST(request: NextRequest) {
       return errorResponse(new Error('successUrl y cancelUrl son requeridos'));
     }
 
+    // Añadir session_id a la URL de éxito
+    const successUrlWithSession = successUrl.includes('?') 
+      ? `${successUrl}&session_id={CHECKOUT_SESSION_ID}`
+      : `${successUrl}?session_id={CHECKOUT_SESSION_ID}`;
+
     // Crear sesión de checkout para el bootcamp
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -80,7 +95,7 @@ export async function POST(request: NextRequest) {
       ],
       mode: 'payment',
       allow_promotion_codes: true,
-      success_url: successUrl,
+      success_url: successUrlWithSession,
       cancel_url: cancelUrl,
       customer_email: undefined, // Stripe pedirá el email
       metadata: {

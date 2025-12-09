@@ -47,7 +47,7 @@ export default function Footer() {
             <div className={styles.statsGrid}>
               {[
                 { label: 'Acceso', value: '6 meses' },
-                { label: 'Sesiones en vivo', value: 'Semanales' },
+                { label: 'Seguimiento', value: 'Semanal' },
                 { label: 'Inversión', value: '$2,026' },
               ].map((item) => (
                 <div key={item.label} className={styles.statCard}>
