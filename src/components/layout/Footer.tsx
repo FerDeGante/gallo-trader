@@ -32,7 +32,7 @@ export default function Footer() {
               Inscripciones abiertas
             </div>
             <a href="/api/v1/checkout/bootcamp" className={styles.primaryCta}>
-              Inscribirme - $2,026
+              Inscribirme
             </a>
           </div>
         </div>

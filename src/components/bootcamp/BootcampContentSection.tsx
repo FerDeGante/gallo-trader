@@ -7,17 +7,17 @@ export default function BootcampContentSection() {
     {
       module: 'MÓDULO A',
       title: 'Todo lo que tienen que saber antes del fondeo',
-      subtitle: '(Análisis / Mentalidad / 2 semanas)',
+      subtitle: 'Análisis / Mentalidad / 2 semanas',
     },
     {
       module: 'MÓDULO B',
       title: 'Todo lo que deben de saber durante',
-      subtitle: '(Cuentas / 1 semana)',
+      subtitle: 'Cuentas / 1 semana',
     },
     {
       module: 'MÓDULO C',
       title: 'Todo lo que deben de saber después de fondearse',
-      subtitle: '(Activación / Replicador)',
+      subtitle: 'Activación / Replicador',
     },
   ];
 

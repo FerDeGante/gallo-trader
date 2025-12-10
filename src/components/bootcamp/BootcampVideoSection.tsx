@@ -9,10 +9,10 @@ export default function BootcampVideoSection() {
         <div className={styles.header}>
           <span className={styles.badge}>🎥 Video de Presentación</span>
           <h2 className={styles.title}>
-            ¿Te imaginas <span className={styles.highlight}>fondearte con $50K MXN las próximas semanas?</span>
+            ¿Te imaginas <span className={styles.highlight}>fondearte con $50K USD en las próximas semanas?</span>
           </h2>
           <p className={styles.subtitle}>
-            Eso es lo que obtendrás con el bootcamp y acompañamiento de traders que ya han recorrido el camino que quieres recorrer, con una estrategia sencilla y paso a paso
+            Eso es justo lo que podrás lograr con nuestro Bootcamp: una estrategia sencilla, paso a paso, y el acompañamiento de traders que ya recorrieron el camino que tú estás por iniciar.
           </p>
         </div>
 
@@ -20,7 +20,7 @@ export default function BootcampVideoSection() {
           <div className={styles.videoContainer}>
             <iframe
               className={styles.video}
-              src="https://www.youtube.com/embed/vIgw3dzQyOw"
+              src="https://www.youtube.com/embed/Yj-RaK1anmc"
               title="Master Funding Bootcamp"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -31,15 +31,15 @@ export default function BootcampVideoSection() {
         <div className={styles.stats}>
           <div className={styles.statItem}>
             <div className={styles.statValue}>100%</div>
-            <div className={styles.statLabel}>Sistema Matemático</div>
+            <div className={styles.statLabel}>Basado en data real</div>
           </div>
           <div className={styles.statItem}>
-            <div className={styles.statValue}>7 días</div>
-            <div className={styles.statLabel}>Programa Intensivo</div>
+            <div className={styles.statValue}>4 Meses</div>
+            <div className={styles.statLabel}>Sistema paso a paso</div>
           </div>
           <div className={styles.statItem}>
-            <div className={styles.statValue}>$50K</div>
-            <div className={styles.statLabel}>Tu Primera Cuenta</div>
+            <div className={styles.statValue}>$50K USD</div>
+            <div className={styles.statLabel}>Tu primera cuenta</div>
           </div>
         </div>
       </div>

@@ -41,10 +41,10 @@ export default function BootcampPricingSection() {
         <div className={styles.header}>
           <span className={styles.badge}>🚀 Comienza Hoy</span>
           <h2 className={styles.title}>
-            Tu entrada al mundo del trading profesional
+            Tu entrada al mundo de las ganancias consistentes
           </h2>
           <p className={styles.subtitle}>
-            Inversión única. Resultados de por vida.
+            Una inversión. <strong>Resultados de por vida.</strong>
           </p>
         </div>
 
@@ -65,35 +65,31 @@ export default function BootcampPricingSection() {
           <div className={styles.features}>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Módulo A: Análisis y Mentalidad completo</span>
+              <span>Módulo A: Todo lo que tienen que saber antes del fondeo</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Módulo B: Todo sobre cuentas de fondeo</span>
+              <span>Módulo B: Todo lo que deben de saber durante</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Módulo C: Activación y replicador</span>
+              <span>Módulo C: Todo lo que deben de saber después de fondearse</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Acceso a Discord VIP de por vida</span>
+              <span>Acceso a Telegram / Discord VIP de por vida</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Todos los descargables y herramientas</span>
+              <span>Descargables, herramientas y recursos incluidos</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Configuración completa NinjaTrader</span>
+              <span>Configuración completa de NinjaTrader</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
               <span>Manuales y guías detalladas</span>
-            </div>
-            <div className={styles.featureItem}>
-              <span className={styles.checkIcon}>✓</span>
-              <span>Bonos valorados en $2,100</span>
             </div>
           </div>
 
@@ -112,7 +108,7 @@ export default function BootcampPricingSection() {
             isLoading={isLoading}
             className={styles.ctaButton}
           >
-            🚀 INSCRIBIRME AL BOOTCAMP - $2,026 USD
+            🚀 INSCRIBIRME AL BOOTCAMP
           </Button>
           
           <div className={styles.ctaSubtext}>

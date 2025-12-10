@@ -18,12 +18,12 @@ export default function BootcampBonusSection() {
         <div className={styles.benefitsGrid}>
           <div className={styles.benefitCard}>
             <div className={styles.benefitIcon}>💰</div>
-            <h3 className={styles.benefitTitle}>Fondéate con $50K MXN en menos de un mes</h3>
+            <h3 className={styles.benefitTitle}>Fondéate con $50K USD en menos de un mes</h3>
           </div>
           
           <div className={styles.benefitCard}>
             <div className={styles.benefitIcon}>🎯</div>
-            <h3 className={styles.benefitTitle}>Sistema paso a paso con acompañamiento</h3>
+            <h3 className={styles.benefitTitle}>Estrategia con sencillos pasos mecanizados y secuenciados, probada con más de 700 trades</h3>
           </div>
           
           <div className={styles.benefitCard}>

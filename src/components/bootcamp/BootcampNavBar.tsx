@@ -115,7 +115,7 @@ export default function BootcampNavBar() {
 
         <div className={styles.actions}>
           <a href="/api/v1/checkout/bootcamp" className={styles.ctaBtn}>
-            🚀 Inscribirme - $2,026
+            🚀 Inscribirme
           </a>
         </div>
       </div>
@@ -158,7 +158,7 @@ export default function BootcampNavBar() {
               <span className={styles.floatingSubtitle}>Solo 15 cupos • Acceso inmediato</span>
             </div>
             <a href="/api/v1/checkout/bootcamp" className={styles.floatingButton}>
-              Asegurar mi Cupo - $2,026
+              Asegurar mi Cupo
             </a>
           </div>
         </div>

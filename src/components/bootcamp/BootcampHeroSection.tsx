@@ -52,11 +52,11 @@ export default function BootcampHeroSection() {
         </h1>
         
         <p className={styles.subtitle}>
-          ¡Fondéate con $50K MXN en pocas semanas!
+          ¡Fondéate con $50K USD en pocas semanas!
           <br className="hidden md:block" />
-          Estrategia fácil y clara probada en más de 700 trades<br className="hidden md:block" />
-          Acompañamiento de traders fondeados para que logres tus metas<br className="hidden md:block" />
-          Modelo de fondeo paso a paso para conseguir $1M MXN ó ¡más!
+          Estrategia sencilla y clara, probada con más de 700 trades<br className="hidden md:block" />
+          Acompañamiento de traders fondeados para ayudarte a lograr tus metas<br className="hidden md:block" />
+          Modelo de fondeo paso a paso para llevarte a $1M USD... o incluso más
         </p>
 
         <div className={styles.priceBox}>
@@ -84,7 +84,7 @@ export default function BootcampHeroSection() {
             isLoading={isLoading}
             className={styles.mainCta}
           >
-            🚀 Asegurar mi Cupo Ahora - $2,026
+            🚀 Asegurar mi Cupo Ahora
           </Button>
           <div className={styles.ctaNote}>
             <span className={styles.checkIcon}>✓</span>
