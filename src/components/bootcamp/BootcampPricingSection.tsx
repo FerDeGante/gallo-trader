@@ -97,6 +97,14 @@ export default function BootcampPricingSection() {
             </div>
           </div>
 
+          <div className={styles.promoHighlight}>
+            <div className={styles.promoIcon}>🎁</div>
+            <div className={styles.promoContent}>
+              <div className={styles.promoTitle}>¿Tienes un código de descuento?</div>
+              <div className={styles.promoSubtitle}>Podrás ingresarlo en el checkout de Stripe</div>
+            </div>
+          </div>
+
           <Button 
             variant="primary" 
             size="lg"

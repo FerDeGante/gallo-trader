@@ -9,10 +9,10 @@ export default function BootcampVideoSection() {
         <div className={styles.header}>
           <span className={styles.badge}>🎥 Video de Presentación</span>
           <h2 className={styles.title}>
-            Mira cómo <span className={styles.highlight}>Gallo opera en vivo</span>
+            ¿Te imaginas <span className={styles.highlight}>fondearte con $50K MXN las próximas semanas?</span>
           </h2>
           <p className={styles.subtitle}>
-            Descubre el sistema exacto que te enseñaremos en el bootcamp
+            Eso es lo que obtendrás con el bootcamp y acompañamiento de traders que ya han recorrido el camino que quieres recorrer, con una estrategia sencilla y paso a paso
           </p>
         </div>
 
@@ -21,10 +21,10 @@ export default function BootcampVideoSection() {
             <iframe
               className={styles.video}
               src="https://www.youtube.com/embed/vIgw3dzQyOw"
-              title="Master Funding Bootcamp - Gallo Trader"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              title="Master Funding Bootcamp"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-            ></iframe>
+            />
           </div>
         </div>
 

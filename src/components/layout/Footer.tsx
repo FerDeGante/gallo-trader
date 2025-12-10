@@ -40,13 +40,12 @@ export default function Footer() {
         <div className={styles.contentGrid}>
           <div className={styles.about}>
             <p className={styles.description}>
-              Bootcamp intensivo para conseguir tu primera cuenta fondeada de $50K.
-              6 meses de acceso con mentoría directa de Gallo durante y post bootcamp.
+              Bootcamp intensivo para ayudarte a conseguir al menos una cuenta fondeada de $50K, con acceso por 4 meses y mentoría de Gallo y su equipo de traders expertos a lo largo del bootcamp.
             </p>
 
             <div className={styles.statsGrid}>
               {[
-                { label: 'Acceso', value: '6 meses' },
+                { label: 'Acceso', value: '4 meses' },
                 { label: 'Seguimiento', value: 'Semanal' },
                 { label: 'Inversión', value: '$2,026' },
               ].map((item) => (

@@ -36,11 +36,11 @@
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: #202c56;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ac965a 0%, #d4af37 100%);
+  background: linear-gradient(135deg, #202c56 0%, #ac965a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -63,18 +63,18 @@
 
 .calendarCard {
   background: #FFFFFF;
-  border: 2px solid rgba(172, 150, 90, 0.3);
+  border: 2px solid rgba(172, 150, 90, 0.5);
   border-radius: 16px;
   padding: 1.5rem;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(32, 44, 86, 0.05);
+  box-shadow: 0 2px 8px rgba(172, 150, 90, 0.15);
 }
 
 .calendarCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(172, 150, 90, 0.25);
-  border-color: rgba(172, 150, 90, 0.6);
+  box-shadow: 0 12px 40px rgba(172, 150, 90, 0.4);
+  border-color: rgba(172, 150, 90, 0.8);
 }
 
 .calendarHeader {

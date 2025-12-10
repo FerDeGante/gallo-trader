@@ -54,7 +54,7 @@
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ac965a 0%, #d4af37 100%);
+  background: linear-gradient(135deg, #202c56 0%, #ac965a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -77,25 +77,25 @@
 
 .benefitCard {
   background: #FFFFFF;
-  border: 1px solid rgba(172, 150, 90, 0.2);
+  border: 1px solid rgba(172, 150, 90, 0.4);
   border-radius: 20px;
   padding: 2rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(32, 44, 86, 0.05);
+  box-shadow: 0 2px 8px rgba(172, 150, 90, 0.1);
 }
 
 .benefitCard:hover {
   background: #FFFFFF;
-  border-color: rgba(172, 150, 90, 0.6);
+  border-color: rgba(172, 150, 90, 0.8);
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(172, 150, 90, 0.25);
+  box-shadow: 0 12px 40px rgba(172, 150, 90, 0.4);
 }
 
 .iconWrapper {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, rgba(32, 44, 86, 0.1) 0%, rgba(172, 150, 90, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(172, 150, 90, 0.15) 0%, rgba(172, 150, 90, 0.25) 100%);
   border-radius: 16px;
   display: flex;
   align-items: center;

@@ -12,7 +12,7 @@
   transform: translateX(-50%);
   width: 1000px;
   height: 1000px;
-  background: radial-gradient(circle, rgba(172, 150, 90, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(172, 150, 90, 0.25) 0%, transparent 70%);
   filter: blur(120px);
   pointer-events: none;
 }
@@ -55,11 +55,11 @@
 
 .pricingCard {
   background: #FFFFFF;
-  border: 2px solid rgba(172, 150, 90, 0.5);
+  border: 2px solid rgba(172, 150, 90, 0.6);
   border-radius: 32px;
   padding: 3rem;
   backdrop-filter: blur(20px);
-  box-shadow: 0 20px 60px rgba(172, 150, 90, 0.2);
+  box-shadow: 0 20px 60px rgba(172, 150, 90, 0.3);
   margin-bottom: 4rem;
 }
 
@@ -147,20 +147,74 @@
   flex-shrink: 0;
 }
 
+.promoHighlight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.75rem;
+  background: linear-gradient(135deg, rgba(172, 150, 90, 0.25) 0%, rgba(212, 175, 55, 0.2) 100%);
+  border: 2px solid rgba(172, 150, 90, 0.7);
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  animation: pulse 2s infinite, glow 3s infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(172, 150, 90, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(172, 150, 90, 0.8);
+  }
+}
+
+.promoHighlight .promoIcon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.promoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.promoTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #202c56;
+}
+
+.promoSubtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
 .ctaButton {
   width: 100%;
   font-size: 1.5rem;
   font-weight: 900;
   padding: 2rem 3rem;
-  background: linear-gradient(135deg, #202c56 0%, #1a2347 100%);
-  box-shadow: 0 12px 48px rgba(32, 44, 86, 0.6), 0 0 0 4px rgba(32, 44, 86, 0.15);
+  background: linear-gradient(135deg, #ac965a 0%, #d4c896 100%);
+  box-shadow: 0 12px 48px rgba(172, 150, 90, 0.8), 0 0 100px rgba(172, 150, 90, 0.6);
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
   border: none;
   position: relative;
   overflow: hidden;
   letter-spacing: 0.02em;
-  color: #ffffff;
+  color: #202c56;
 }
 
 .ctaButton::before {
@@ -180,8 +234,8 @@
 
 .ctaButton:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 16px 56px rgba(32, 44, 86, 0.8), 0 0 0 5px rgba(32, 44, 86, 0.2);
-  background: linear-gradient(135deg, #2d3f6f 0%, #202c56 100%);
+  box-shadow: 0 16px 56px rgba(172, 150, 90, 1), 0 0 120px rgba(172, 150, 90, 0.8);
+  background: linear-gradient(135deg, #d4c896 0%, #ac965a 100%);
 }
 
 .ctaButton:active {
@@ -200,7 +254,7 @@
 }
 
 .ctaSubtext .checkmark {
-  color: #34a853;
+  color: #ac965a;
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -240,15 +294,15 @@
 .urgency {
   text-align: center;
   padding: 1rem;
-  background: rgba(251, 188, 4, 0.1);
-  border: 1px solid rgba(251, 188, 4, 0.3);
+  background: rgba(172, 150, 90, 0.1);
+  border: 1px solid rgba(172, 150, 90, 0.3);
   border-radius: 12px;
-  color: #fde047;
+  color: #ac965a;
   font-size: 1.125rem;
 }
 
 .urgency strong {
-  color: #fbbc04;
+  color: #ac965a;
   font-weight: 800;
 }
 

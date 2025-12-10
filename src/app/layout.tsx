@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Master Funding Bootcamp - Gallo Trader",
-  description: "Bootcamp intensivo para conseguir tu primera cuenta fondeada de $50K. Sistema probado con mentoría directa de Gallo.",
+  description: "Bootcamp intensivo para ayudarte a conseguir al menos una cuenta fondeada de $50K, con acceso por 4 meses y mentoría de Gallo y su equipo de traders expertos.",
   icons: {
     icon: '/Logo.png',
   },

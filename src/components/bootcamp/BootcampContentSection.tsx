@@ -8,50 +8,16 @@ export default function BootcampContentSection() {
       module: 'MÓDULO A',
       title: 'Todo lo que tienen que saber antes del fondeo',
       subtitle: '(Análisis / Mentalidad / 2 semanas)',
-      topics: [
-        'Introducción al fondeo rápido',
-        'La mentalidad del trader exitoso',
-        '¿Por qué el modelo funciona?',
-        '¿Qué es una empresa de fondeo?',
-        'Diferencia entre CFDs vs Futuros',
-        'Qué NO debes hacer',
-        'La data dice que lo conseguirás',
-        'Descargable de data de estrategia de medias móviles y estocástico con confirmación',
-        'La estrategia técnica, paso a paso',
-        'Práctica una semana en demo',
-        'Cómo crear tu cuenta demo en Ninja Trader',
-        'Cómo configurar desde cero EMA\'s y estocástico en NinjaTrader',
-        'Cómo usar la tabla de riesgo para calcular el tamaño de tu posición',
-        'Herramienta para calcular la posición de forma automática',
-        'Como instalar Axelia Risk',
-      ],
-      color: '#86efac', // Verde claro
     },
     {
       module: 'MÓDULO B',
       title: 'Todo lo que deben de saber durante',
       subtitle: '(Cuentas / 1 semana)',
-      topics: [
-        'Como comprar mis cuentas de fondeo',
-        'Como administrar mis cuentas de fondeo',
-        'Descargable Bitácora',
-        'Como gestionar mi riesgo por trade',
-        'Descargable de herramienta de tamaño de posición',
-        'Descargable de calculo de tamaño de posición mediante Excel',
-        'Como colocar SL y TP en NinjaTrader',
-      ],
-      color: '#fde047', // Amarillo
     },
     {
       module: 'MÓDULO C',
       title: 'Todo lo que deben de saber después de fondearse',
       subtitle: '(Activación / Replicador)',
-      topics: [
-        'Manual como activar una cuenta fondeada',
-        '¿Quemaste una cuenta de fondeo en Apex?',
-        'Como usar un replicador de cuentas',
-      ],
-      color: '#93c5fd', // Azul claro
     },
   ];
 
@@ -68,32 +34,18 @@ export default function BootcampContentSection() {
           </p>
         </div>
 
-        <div className={styles.timeline}>
+        <div className={styles.modulesGrid}>
           {modules.map((item, index) => (
-            <div key={index} className={styles.dayCard}>
-              <div className={styles.dayNumber}>{item.module}</div>
-              <div className={styles.dayContent}>
-                <h3 className={styles.dayTitle}>{item.title}</h3>
-                <p className={styles.daySubtitle}>{item.subtitle}</p>
-                <ul className={styles.topicsList}>
-                  {item.topics.map((topic, i) => (
-                    <li key={i} className={styles.topic}>
-                      <span className={styles.checkIcon}>✓</span>
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
+            <div key={index} className={styles.moduleCard}>
+              <div className={styles.moduleHeader}>
+                <div className={styles.moduleLetter}>{String.fromCharCode(65 + index)}</div>
+              </div>
+              <div className={styles.moduleContent}>
+                <h3 className={styles.moduleTitle}>{item.title}</h3>
+                <p className={styles.moduleSubtitle}>{item.subtitle}</p>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className={styles.discordSection}>
-          <div className={styles.discordIcon}>💬</div>
-          <h3 className={styles.discordTitle}>Acceso a Discord Exclusivo</h3>
-          <p className={styles.discordText}>
-            Únete a nuestra comunidad de traders activos, comparte experiencias y recibe soporte directo durante tu proceso de fondeo.
-          </p>
         </div>
       </div>
     </section>

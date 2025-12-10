@@ -28,7 +28,7 @@ async function sendBootcampWelcomeEmail(email: string, session: Stripe.Checkout.
   await resend.emails.send({
     from: 'Gallo Trader <bootcamp@gallotrader.com>',
     to: email,
-    subject: '¡Bienvenido al Master Funding Bootcamp! 🎉',
+    subject: '¡Bienvenido a Master Funding Bootcamp! 🎉',
     html: htmlContent,
     text: textContent,
   });

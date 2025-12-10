@@ -79,7 +79,7 @@ function SuccessPageContent() {
         </div>
 
         <h1 className={styles.title}>
-          ¡Bienvenido al Master Funding Bootcamp! 🎉
+          ¡Bienvenido a Master Funding Bootcamp! 🎉
         </h1>
 
         <p className={styles.subtitle}>
@@ -111,7 +111,7 @@ function SuccessPageContent() {
               <div className={styles.stepContent}>
                 <h4 className={styles.stepTitle}>Únete a Discord</h4>
                 <p className={styles.stepText}>
-                  Presenta yourself y conoce a tus compañeros
+                  Preséntate y comienza a conectar con más traders
                 </p>
               </div>
             </div>
@@ -120,7 +120,7 @@ function SuccessPageContent() {
               <div className={styles.stepContent}>
                 <h4 className={styles.stepTitle}>Revisa los materiales</h4>
                 <p className={styles.stepText}>
-                  Encuentra toda la información y recursos en Discord
+                  Ahí encontrarás toda la información, guías y recursos que usarás durante el Bootcamp
                 </p>
               </div>
             </div>
@@ -129,7 +129,7 @@ function SuccessPageContent() {
               <div className={styles.stepContent}>
                 <h4 className={styles.stepTitle}>Prepárate mentalmente</h4>
                 <p className={styles.stepText}>
-                  Las próximas semanas serán intensivas y transformadoras
+                  Vienen semanas intensivas, de mucho enfoque y transformación. ¡Tú puedes!
                 </p>
               </div>
             </div>
@@ -138,10 +138,10 @@ function SuccessPageContent() {
 
         <div className={styles.footer}>
           <p className={styles.footerText}>
-            ¿Tienes preguntas? Escríbenos en Discord, ahí estará todo el equipo listo para apoyarte.
+            ¿Tienes preguntas? Escríbenos por Discord; todo el equipo estaremos listos para apoyarte en lo que necesites
           </p>
           <p className={styles.footerNote}>
-            Nos vemos en el bootcamp 🚀
+            ¡Nos vemos en el Bootcamp!
           </p>
         </div>
       </div>

@@ -44,14 +44,6 @@ export default function BootcampHeroSection() {
       </div>
 
       <div className={styles.heroContent}>
-        <div className={styles.badge}>
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-          </span>
-          🔥 Cupos Limitados - Inicia en 7 días
-        </div>
-
         <h1 className={styles.title}>
           Master Funding<br />
           <span className={styles.gradientText}>
@@ -60,9 +52,11 @@ export default function BootcampHeroSection() {
         </h1>
         
         <p className={styles.subtitle}>
-          ¡Fondéate con 50K en pocas semanas!
+          ¡Fondéate con $50K MXN en pocas semanas!
           <br className="hidden md:block" />
-          Estrategia fácil y clara probada en más de 700 trades • Acompañamiento de traders fondeados para que logres tus metas • Modelo de fondeo paso a paso para conseguir 1M usd ó ¡más!
+          Estrategia fácil y clara probada en más de 700 trades<br className="hidden md:block" />
+          Acompañamiento de traders fondeados para que logres tus metas<br className="hidden md:block" />
+          Modelo de fondeo paso a paso para conseguir $1M MXN ó ¡más!
         </p>
 
         <div className={styles.priceBox}>
@@ -72,6 +66,14 @@ export default function BootcampHeroSection() {
             <span className={styles.pricePeriod}>USD</span>
           </div>
           <div className={styles.priceNote}>Pago único • Acceso inmediato</div>
+        </div>
+
+        <div className={styles.promoCallout}>
+          <div className={styles.promoIcon}>🎁</div>
+          <div className={styles.promoText}>
+            <strong>¿Tienes un código promocional?</strong>
+            <span>Podrás aplicarlo en el siguiente paso del checkout</span>
+          </div>
         </div>
 
         <div className={styles.ctaGroup}>

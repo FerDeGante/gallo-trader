@@ -15,7 +15,7 @@ export function getBootcampWelcomeEmailTemplate(
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bienvenido al Master Funding Bootcamp</title>
+  <title>Bienvenido a Master Funding Bootcamp</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #000000; color: #ffffff;">
   <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #000000;">
@@ -118,7 +118,7 @@ export function getBootcampWelcomeEmailTemplate(
                       Únete a Discord
                     </p>
                     <p style="margin: 0; font-size: 14px; color: #94a3b8;">
-                      Preséntate y conoce a tus compañeros de bootcamp
+                      Preséntate y comienza a conectar con más traders
                     </p>
                   </td>
                 </tr>
@@ -134,10 +134,10 @@ export function getBootcampWelcomeEmailTemplate(
                   </td>
                   <td style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 15px;">
                     <p style="margin: 0 0 5px 0; font-size: 16px; font-weight: 700; color: #ffffff;">
-                      Configura tu setup
+                      Revisa los materiales
                     </p>
                     <p style="margin: 0; font-size: 14px; color: #94a3b8;">
-                      Prepara TradingView y tu entorno de trabajo
+                      Ahí encontrarás toda la información, guías y recursos que usarás durante el Bootcamp
                     </p>
                   </td>
                 </tr>
@@ -156,7 +156,7 @@ export function getBootcampWelcomeEmailTemplate(
                       Prepárate mentalmente
                     </p>
                     <p style="margin: 0; font-size: 14px; color: #94a3b8;">
-                      Los próximos 7 días serán intensivos y transformadores
+                      Vienen semanas intensivas, de mucho enfoque y transformación. ¡Tú puedes!
                     </p>
                   </td>
                 </tr>
@@ -209,10 +209,10 @@ export function getBootcampWelcomeEmailTemplate(
           <tr>
             <td style="text-align: center; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
               <p style="margin: 0 0 10px 0; font-size: 16px; color: #cbd5e1;">
-                ¿Tienes preguntas? Escríbenos en Discord
+                ¿Tienes preguntas? Escríbenos por Discord; todo el equipo estaremos listos para apoyarte en lo que necesites
               </p>
               <p style="margin: 0; font-size: 18px; font-weight: 700; background: linear-gradient(135deg, #34a853, #4285f4); -webkit-background-clip: text; background-clip: text; color: transparent;">
-                Nos vemos en el bootcamp 🚀
+                ¡Nos vemos en el Bootcamp!
               </p>
             </td>
           </tr>
@@ -241,7 +241,7 @@ export function getBootcampWelcomeEmailText(
   const amount = session.amount_total ? (session.amount_total / 100).toFixed(2) : '1000.00';
   
   return `
-¡Bienvenido al Master Funding Bootcamp! 🎉
+¡Bienvenido a Master Funding Bootcamp! 🎉
 
 Tu inscripción ha sido confirmada.
 
@@ -253,13 +253,13 @@ https://discord.gg/YFrN3mDk
 PRÓXIMOS PASOS:
 
 1. Únete a Discord
-   Preséntate y conoce a tus compañeros de bootcamp
+   Preséntate y comienza a conectar con más traders
 
-2. Configura tu setup
-   Prepara TradingView y tu entorno de trabajo
+2. Revisa los materiales
+   Ahí encontrarás toda la información, guías y recursos que usarás durante el Bootcamp
 
 3. Prepárate mentalmente
-   Los próximos 7 días serán intensivos y transformadores
+   Vienen semanas intensivas, de mucho enfoque y transformación. ¡Tú puedes!
 
 LO QUE INCLUYE:
 ✓ 7 sesiones en vivo con Gallo
@@ -269,9 +269,9 @@ LO QUE INCLUYE:
 ✓ Soporte hasta que pases tu cuenta
 ✓ Bonos valorados en $1,388
 
-¿Tienes preguntas? Escríbenos en Discord
+¿Tienes preguntas? Escríbenos por Discord; todo el equipo estaremos listos para apoyarte en lo que necesites
 
-Nos vemos en el bootcamp 🚀
+¡Nos vemos en el Bootcamp!
 
 ---
 Gallo Trader
