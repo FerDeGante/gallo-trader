@@ -9,23 +9,72 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Master Funding Bootcamp - Fondéate con $50K USD",
-  description: "¿Te imaginas fondearte con $50K USD en las próximas semanas? Estrategia sencilla y clara, probada con más de 700 trades. Acompañamiento de traders fondeados para ayudarte a lograr tus metas. Sistema paso a paso de 4 meses.",
+  title: "Bootcamp de Trading 2025 | Master Funding Bootcamp - Fondéate con $50K USD",
+  description: "🚀 Bootcamp de Trading profesional para conseguir cuenta fondeada. Aprende estrategias probadas con +700 trades reales. Mentoría de traders fondeados. Sistema paso a paso de 4 meses. Inscríbete al mejor bootcamp de trading en México.",
+  keywords: [
+    "bootcamp de trading",
+    "bootcamp trading",
+    "curso trading",
+    "cuenta fondeada",
+    "trading bootcamp méxico",
+    "aprender trading",
+    "estrategias de trading",
+    "trading profesional",
+    "prop trading",
+    "funding trading",
+    "curso forex",
+    "mentoria trading"
+  ],
+  authors: [{ name: "Master Funding Bootcamp" }],
+  creator: "Master Funding Bootcamp",
+  publisher: "Master Funding Bootcamp",
+  alternates: {
+    canonical: "https://www.mfb.mx"
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
-    icon: '/Logo.png',
-    apple: '/Logo.png',
+    icon: [
+      { url: '/gallo_simbolo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/gallo_simbolo.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: '/gallo_simbolo.png',
+    shortcut: '/gallo_simbolo.png',
   },
   openGraph: {
-    title: "Master Funding Bootcamp - Fondéate con $50K USD",
-    description: "Estrategia probada con más de 700 trades. Acompañamiento de traders fondeados. Sistema paso a paso de 4 meses para conseguir tu cuenta fondeada.",
-    images: ['/Logo.png'],
     type: 'website',
+    locale: 'es_MX',
+    url: 'https://www.mfb.mx',
+    siteName: 'Master Funding Bootcamp',
+    title: "Bootcamp de Trading 2025 | Fondéate con $50K USD",
+    description: "🚀 El mejor bootcamp de trading en México. Estrategia probada con +700 trades. Mentoría de traders fondeados. Sistema paso a paso para conseguir tu cuenta fondeada de $50K USD.",
+    images: [
+      {
+        url: 'https://www.mfb.mx/Logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Master Funding Bootcamp - Bootcamp de Trading',
+      }
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Master Funding Bootcamp - Fondéate con $50K USD",
-    description: "Estrategia probada con más de 700 trades. Sistema paso a paso de 4 meses para conseguir tu cuenta fondeada.",
-    images: ['/Logo.png'],
+    title: "Bootcamp de Trading 2025 | Master Funding Bootcamp",
+    description: "🚀 Aprende trading profesional y consigue tu cuenta fondeada. Estrategia probada con +700 trades. Sistema paso a paso de 4 meses.",
+    images: ['https://www.mfb.mx/Logo.png'],
+    creator: '@MFBootcamp',
+  },
+  verification: {
+    google: 'tu-codigo-de-verificacion-de-google-search-console',
   },
 };
 
