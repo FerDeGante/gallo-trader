@@ -30,8 +30,8 @@ export default function BootcampNavBar() {
   }, []);
 
   useEffect(() => {
-    // Fecha de inicio: 15 de diciembre 2025 a las 19:00 (hora local)
-    const targetDate = new Date('2025-12-15T19:00:00').getTime();
+    // Fecha de inicio: 11 de diciembre 2025 a las 19:00 (hora local)
+    const targetDate = new Date('2025-12-11T19:00:00').getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();

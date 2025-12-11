@@ -44,11 +44,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/gallo_simbolo.png', sizes: '32x32', type: 'image/png' },
-      { url: '/gallo_simbolo.png', sizes: '192x192', type: 'image/png' },
+      { url: '/Logo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/Logo.png', sizes: '192x192', type: 'image/png' },
     ],
-    apple: '/gallo_simbolo.png',
-    shortcut: '/gallo_simbolo.png',
+    apple: '/Logo.png',
+    shortcut: '/Logo.png',
   },
   openGraph: {
     type: 'website',
