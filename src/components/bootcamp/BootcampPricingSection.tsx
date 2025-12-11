@@ -65,11 +65,15 @@ export default function BootcampPricingSection() {
           <div className={styles.features}>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
+              <span>Introducción al Sistema Fondeo Rápido</span>
+            </div>
+            <div className={styles.featureItem}>
+              <span className={styles.checkIcon}>✓</span>
               <span>Módulo A: Todo lo que tienen que saber antes del fondeo</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Módulo B: Todo lo que deben de saber durante</span>
+              <span>Módulo B: Todo lo que deben de saber durante la etapa de fondeo</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
@@ -77,7 +81,11 @@ export default function BootcampPricingSection() {
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
-              <span>Acceso a Telegram / Discord VIP de por vida</span>
+              <span>Acceso a Discord VIP durante el Bootcamp</span>
+            </div>
+            <div className={styles.featureItem}>
+              <span className={styles.checkIcon}>✓</span>
+              <span>Acceso a Telegram de por vida</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.checkIcon}>✓</span>
@@ -126,36 +134,6 @@ export default function BootcampPricingSection() {
 
           <div className={styles.urgency}>
             ⚠️ Solo quedan <strong>15 cupos</strong> disponibles
-          </div>
-        </div>
-
-        <div className={styles.faq}>
-          <h3 className={styles.faqTitle}>¿Tienes preguntas?</h3>
-          <div className={styles.faqGrid}>
-            <div className={styles.faqItem}>
-              <div className={styles.faqQuestion}>¿Cuándo empieza?</div>
-              <div className={styles.faqAnswer}>
-                El próximo bootcamp inicia en 7 días. Recibirás toda la información por email al inscribirte.
-              </div>
-            </div>
-            <div className={styles.faqItem}>
-              <div className={styles.faqQuestion}>¿Necesito experiencia previa?</div>
-              <div className={styles.faqAnswer}>
-                No. Este bootcamp está diseñado tanto para principiantes como para traders que quieren mejorar sus resultados.
-              </div>
-            </div>
-            <div className={styles.faqItem}>
-              <div className={styles.faqQuestion}>¿Qué pasa después del bootcamp?</div>
-              <div className={styles.faqAnswer}>
-                Mantienes acceso al Discord VIP, a todas las grabaciones, y al soporte continuo de la comunidad.
-              </div>
-            </div>
-            <div className={styles.faqItem}>
-              <div className={styles.faqQuestion}>¿Garantizan que pasaré mi cuenta?</div>
-              <div className={styles.faqAnswer}>
-                Te damos todas las herramientas y el acompañamiento. El éxito depende de tu dedicación y disciplina aplicando lo aprendido.
-              </div>
-            </div>
           </div>
         </div>
       </div>

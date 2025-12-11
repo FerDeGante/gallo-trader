@@ -7,7 +7,7 @@ export default function BootcampValueSection() {
     {
       icon: '🎯',
       title: 'Estrategia Probada',
-      description: 'Sistema completo con medias móviles y estocástico confirmado con data real',
+      description: 'Estrategia con sencillos pasos mecanizados y secuenciados, probada con más de 700 trades',
     },
     {
       icon: '⚡',

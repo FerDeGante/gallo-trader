@@ -22,18 +22,18 @@ export default function BootcampBonusSection() {
           </div>
           
           <div className={styles.benefitCard}>
-            <div className={styles.benefitIcon}>🎯</div>
-            <h3 className={styles.benefitTitle}>Estrategia con sencillos pasos mecanizados y secuenciados, probada con más de 700 trades</h3>
+            <div className={styles.benefitIcon}>⚙️</div>
+            <h3 className={styles.benefitTitle}>Estrategia de trading sencilla y mecanizada</h3>
           </div>
           
           <div className={styles.benefitCard}>
             <div className={styles.benefitIcon}>📈</div>
-            <h3 className={styles.benefitTitle}>Modelo exitoso basado en datos</h3>
+            <h3 className={styles.benefitTitle}>Modelo exitoso basado en datos con más de 700 trades</h3>
           </div>
           
           <div className={styles.benefitCard}>
-            <div className={styles.benefitIcon}>⚙️</div>
-            <h3 className={styles.benefitTitle}>Estrategia de trading sencilla y mecanizada</h3>
+            <div className={styles.benefitIcon}>🎯</div>
+            <h3 className={styles.benefitTitle}>Sistema paso a paso con acompañamiento</h3>
           </div>
         </div>
       </div>

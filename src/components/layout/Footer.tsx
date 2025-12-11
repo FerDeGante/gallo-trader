@@ -47,7 +47,7 @@ export default function Footer() {
               {[
                 { label: 'Acceso', value: '4 meses' },
                 { label: 'Seguimiento', value: 'Semanal' },
-                { label: 'Inversión', value: '$2,026' },
+                { label: 'Inversión', value: '$2,026 USD' },
               ].map((item) => (
                 <div key={item.label} className={styles.statCard}>
                   <p className={styles.statLabel}>{item.label}</p>

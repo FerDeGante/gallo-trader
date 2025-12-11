@@ -315,28 +315,53 @@
 /* Responsive */
 @media (max-width: 768px) {
   .container {
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    order: 1;
+    flex: 0 0 auto;
+  }
+
+  .logoIcon {
+    width: 120px;
+    height: auto;
+  }
+
+  .actions {
+    order: 2;
+    flex: 0 0 auto;
+  }
+
+  .countdown {
+    order: 3;
+    flex: 1 1 100%;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    gap: 0.25rem;
   }
 
   .navLinks {
     display: none;
   }
 
-  .countdown {
-    padding: 0.5rem 1rem;
-    gap: 0.375rem;
-  }
-
   .countdownLabel {
     font-size: 0.625rem;
+    gap: 0.25rem;
   }
 
   .fireIcon {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+  }
+
+  .countdownTimer {
+    gap: 0.25rem;
   }
 
   .timeValue {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .timeLabel {
@@ -344,72 +369,152 @@
   }
 
   .timeSeparator {
-    font-size: 1rem;
+    font-size: 0.875rem;
+    margin: 0 -0.1rem;
   }
 
   .timeBlock {
-    min-width: 32px;
+    min-width: 28px;
   }
 
   .ctaBtn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.875rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.75rem;
   }
 
   .floatingCta {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem;
   }
 
   .floatingContent {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
     text-align: center;
   }
 
   .floatingButton {
     width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 0.875rem;
+    font-size: 0.9375rem;
   }
 
   .floatingText {
     align-items: center;
   }
+
+  .floatingTitle {
+    font-size: 1rem;
+  }
+
+  .floatingSubtitle {
+    font-size: 0.8125rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .ctaBtn {
-    font-size: 0.75rem;
-    padding: 0.625rem 1rem;
+  .container {
+    padding: 0.625rem 0.75rem;
+    gap: 0.5rem;
   }
 
   .logo {
-    font-size: 1.125rem;
+    font-size: 1rem;
+  }
+
+  .logoIcon {
+    width: 100px;
+    height: auto;
+  }
+
+  .ctaBtn {
+    font-size: 0.6875rem;
+    padding: 0.5rem 1rem;
   }
 
   .countdown {
-    padding: 0.375rem 0.75rem;
+    padding: 0.375rem 0.5rem;
     gap: 0.25rem;
   }
 
   .countdownLabel {
-    font-size: 0.5rem;
+    font-size: 0.5625rem;
     gap: 0.25rem;
   }
 
+  .fireIcon {
+    font-size: 0.6875rem;
+  }
+
+  .countdownTimer {
+    gap: 0.125rem;
+  }
+
   .timeValue {
-    font-size: 1rem;
-  }
-
-  .timeLabel {
-    font-size: 0.45rem;
-  }
-
-  .timeSeparator {
     font-size: 0.875rem;
   }
 
+  .timeLabel {
+    font-size: 0.4375rem;
+  }
+
+  .timeSeparator {
+    font-size: 0.75rem;
+    margin: 0;
+  }
+
   .timeBlock {
-    min-width: 28px;
+    min-width: 24px;
+  }
+
+  .floatingButton {
+    font-size: 0.875rem;
+    padding: 0.75rem;
+  }
+
+  .floatingTitle {
+    font-size: 0.9375rem;
+  }
+
+  .floatingSubtitle {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .logoIcon {
+    width: 90px;
+  }
+
+  .ctaBtn {
+    font-size: 0.625rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .countdown {
+    padding: 0.375rem 0.5rem;
+  }
+
+  .countdownLabel {
+    font-size: 0.5rem;
+  }
+
+  .timeValue {
+    font-size: 0.8125rem;
+  }
+
+  .timeLabel {
+    font-size: 0.375rem;
+  }
+
+  .timeSeparator {
+    font-size: 0.6875rem;
+  }
+
+  .timeBlock {
+    min-width: 22px;
   }
 }
