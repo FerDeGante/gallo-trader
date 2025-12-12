@@ -66,7 +66,7 @@ export default function BootcampNavBar() {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}>
       <div className={styles.container}>
-        <Link href="/bootcamp" className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           <Image 
             src="/Logo.png" 
             alt="Master Funding Bootcamp" 

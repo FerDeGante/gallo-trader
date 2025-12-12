@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
       mode: 'payment',
       allow_promotion_codes: true,
       success_url: `${origin}/bootcamp/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/bootcamp`,
+      cancel_url: `${origin}/`,
       customer_email: undefined,
       metadata: {
         product_type: 'bootcamp',
