@@ -56,8 +56,8 @@ export default function BootcampPricingSection() {
 
           <div className={styles.priceSection}>
             <div className={styles.priceValue}>
-              <span className={styles.currency}>$</span>2,026
-              <span className={styles.period}>USD</span>
+              <span className={styles.currency}>$</span>38,494
+              <span className={styles.period}>MXN</span>
             </div>
             <div className={styles.priceNote}>Pago único • Sin suscripciones</div>
           </div>

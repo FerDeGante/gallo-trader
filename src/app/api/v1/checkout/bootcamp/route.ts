@@ -25,13 +25,13 @@ export async function GET(request: NextRequest) {
       line_items: [
         {
           price_data: {
-            currency: 'usd',
+            currency: 'mxn',
             product_data: {
               name: 'Master Funding Bootcamp',
               description: 'Programa completo con módulos integrales, herramientas y acceso a Discord VIP',
               images: ['https://gallotrader.com/bootcamp-cover.jpg'],
             },
-            unit_amount: 202600, // $2,026.00 en centavos
+            unit_amount: 3849400, // $38,494.00 MXN en centavos
           },
           quantity: 1,
         },
@@ -82,13 +82,13 @@ export async function POST(request: NextRequest) {
       line_items: [
         {
           price_data: {
-            currency: 'usd',
+            currency: 'mxn',
             product_data: {
               name: 'Master Funding Bootcamp',
               description: 'Programa completo con módulos integrales, herramientas y acceso a Discord VIP',
               images: ['https://gallotrader.com/bootcamp-cover.jpg'],
             },
-            unit_amount: 202600, // $2,026.00 en centavos
+            unit_amount: 3849400, // $38,494.00 MXN en centavos
           },
           quantity: 1,
         },
