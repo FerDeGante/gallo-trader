@@ -94,7 +94,7 @@ function SuccessPageContent() {
             Conecta con otros participantes del bootcamp, accede a los materiales exclusivos y comienza tu preparación
           </p>
           <a 
-            href="https://discord.gg/YFrN3mDk" 
+            href="https://discord.com/invite/5ArVFwMy" 
             target="_blank" 
             rel="noopener noreferrer"
             className={styles.discordButton}
