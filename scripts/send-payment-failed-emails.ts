@@ -24,7 +24,7 @@ async function sendEmails() {
       const { data, error } = await resend.emails.send({
         from: 'Master Funding Bootcamp <team@mfb.mx>',
         to: [recipient.email],
-        reply_to: 'team@mfb.mx',
+        replyTo: 'team@mfb.mx',
         subject: 'Ya quedó en MXN (y con tu descuento) — entra aquí y termina tu acceso',
         react: PaymentFailedMXNEmail({
           nombre: recipient.nombre,
