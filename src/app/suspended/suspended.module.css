@@ -96,6 +96,41 @@
   letter-spacing: 0.05em;
 }
 
+.contractDetails {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 0, 0, 0.3);
+  border-radius: 12px;
+  text-align: left;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ff0000;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.contractText {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.contractText:last-child {
+  margin-bottom: 0;
+}
+
+.contractText strong {
+  color: #ff6b6b;
+  font-weight: 700;
+}
+
 .details {
   margin: 3rem 0;
 }
@@ -201,6 +236,35 @@
   font-weight: 700;
   color: #ff6b6b;
   margin-top: 1rem;
+}
+
+.disclaimer {
+  margin: 3rem 0 2rem;
+  padding: 2rem;
+  background: rgba(255, 0, 0, 0.15);
+  border: 2px solid #ff0000;
+  border-radius: 12px;
+}
+
+.disclaimerTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ff0000;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.disclaimerText {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.disclaimerText strong {
+  color: #ff6b6b;
+  font-weight: 700;
 }
 
 .social {

@@ -46,7 +46,18 @@ export default function SuspendedPage() {
         <h1 className={styles.title}>SITIO SUSPENDIDO</h1>
         
         <div className={styles.alert}>
-          <p className={styles.reason}>Falta de Pago</p>
+          <p className={styles.reason}>Incumplimiento de Contrato Acordado</p>
+        </div>
+
+        <div className={styles.contractDetails}>
+          <h2 className={styles.subtitle}>CUARTA. COSTO Y FORMA DE PAGO</h2>
+          <p className={styles.contractText}>
+            El cliente (representante del Master Funding Bootcamp y/o Gallo Trader) se comprometió a pagar 
+            una <strong>comisión del 20%</strong> de cada producto vendido.
+          </p>
+          <p className={styles.contractText}>
+            Al haber <strong>negativa de pago</strong>, se procede a suspender el uso del dominio.
+          </p>
         </div>
 
         <div className={styles.details}>
@@ -54,6 +65,15 @@ export default function SuspendedPage() {
             <span className={styles.label}>Total Adeudado:</span>
             <span className={styles.amount}>$69,842.00 MXN</span>
           </div>
+        </div>
+
+        <div className={styles.disclaimer}>
+          <h3 className={styles.disclaimerTitle}>DESLINDE DE RESPONSABILIDAD</h3>
+          <p className={styles.disclaimerText}>
+            Se deslinda de cualquier venta, acto, situación, etc. que acontezca a partir de las 
+            <strong> 15:30 hrs del 12 de diciembre de 2025</strong> con el o los representantes 
+            del Master Funding Bootcamp y/o Gallo Trader.
+          </p>
         </div>
 
         <div className={styles.countdown}>
