@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a0000 0%, #330000 50%, #1a0000 100%);
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fffbeb 100%);
   padding: 2rem;
   position: relative;
   overflow: hidden;
@@ -20,8 +20,8 @@
     45deg,
     transparent,
     transparent 10px,
-    rgba(255, 0, 0, 0.03) 10px,
-    rgba(255, 0, 0, 0.03) 20px
+    rgba(251, 191, 36, 0.05) 10px,
+    rgba(251, 191, 36, 0.05) 20px
   );
   pointer-events: none;
 }
@@ -29,11 +29,11 @@
 .content {
   max-width: 800px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  border: 3px solid #ff0000;
+  background: rgba(255, 255, 255, 0.95);
+  border: 3px solid #f59e0b;
   border-radius: 20px;
   padding: 3rem 2rem;
-  box-shadow: 0 0 60px rgba(255, 0, 0, 0.5), inset 0 0 30px rgba(255, 0, 0, 0.1);
+  box-shadow: 0 0 40px rgba(245, 158, 11, 0.3), inset 0 0 20px rgba(251, 191, 36, 0.1);
   text-align: center;
   position: relative;
   z-index: 1;
@@ -42,10 +42,10 @@
 
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 0 60px rgba(255, 0, 0, 0.5), inset 0 0 30px rgba(255, 0, 0, 0.1);
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.3), inset 0 0 20px rgba(251, 191, 36, 0.1);
   }
   50% {
-    box-shadow: 0 0 80px rgba(255, 0, 0, 0.7), inset 0 0 40px rgba(255, 0, 0, 0.15);
+    box-shadow: 0 0 60px rgba(245, 158, 11, 0.5), inset 0 0 30px rgba(251, 191, 36, 0.15);
   }
 }
 
@@ -58,25 +58,25 @@
 .icon {
   width: 80px;
   height: 80px;
-  color: #ff0000;
-  filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.7));
-  animation: shake 0.5s infinite;
-}
-
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+  color: #f59e0b;
+  filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.5));
 }
 
 .title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 900;
-  color: #ff0000;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #92400e;
+  margin-bottom: 1.5rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.message {
+  font-size: 1.125rem;
+  color: #78350f;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .alert {

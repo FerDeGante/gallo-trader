@@ -10,7 +10,9 @@ export default function SuspendedPage() {
           </svg>
         </div>
 
-        <h1 className={styles.title}>SITIO SUSPENDIDO</h1>
+        <h1 className={styles.title}>Temporalmente no disponible</h1>
+        
+        <p className={styles.message}>El propietario de este dominio ha suspendido el sitio, por incumplimiento de Acuerdo de desarrollo.</p>
       </div>
     </div>
   );
